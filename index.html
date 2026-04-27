@@ -2,129 +2,433 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Paul's Brief · Sun Apr 26</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Brief — April 27, 2026</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0f1117;color:#e8eaf0;padding:12px;max-width:600px;margin:0 auto;font-size:15px;line-height:1.5}
-.date-bar{text-align:center;font-size:11px;color:#6b7280;padding:6px 0 14px;letter-spacing:.06em;text-transform:uppercase}
-.card{background:#1a1d27;border:1px solid #2a2d3a;border-radius:14px;padding:14px 16px;margin-bottom:11px}
-.card-title{font-size:10px;font-weight:700;color:#9ba3bf;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
-.quote-card{background:linear-gradient(135deg,#1a1d27,#1e1535);border:1px solid #3d2d7a;border-radius:14px;padding:16px;margin-bottom:11px;text-align:center}
-.quote-text{font-size:15px;font-style:italic;color:#d4c8f0;line-height:1.6;margin-bottom:8px}
-.quote-author{font-size:11px;color:#9b8abf}
-.row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #2a2d3a}
-.row:last-child{border-bottom:none}
-.dot{width:8px;height:8px;border-radius:50%;margin-top:6px;flex-shrink:0}
-.dot-red{background:#e85b5b}.dot-green{background:#3ecf8e}.dot-yellow{background:#f59e0b}.dot-blue{background:#5b73e8}.dot-gray{background:#6b7280}
-.row-title{font-weight:600;font-size:14px}
-.row-sub{font-size:12px;color:#9ba3bf;margin-top:2px}
-.urgent{background:#450a0a;border:1px solid #7f1d1d;border-radius:8px;padding:10px 12px;margin-bottom:8px}
-.urgent-title{font-weight:700;font-size:13px;color:#fca5a5}
-.urgent-sub{font-size:12px;color:#f87171;margin-top:3px}
-.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px}
-.stat-cell{background:#0f1117;border-radius:8px;padding:10px;text-align:center}
-.stat-val{font-size:17px;font-weight:700}
-.stat-lbl{font-size:10px;color:#9ba3bf;margin-top:2px}
-.pos{color:#3ecf8e}.warn{color:#f59e0b}.neg{color:#e85b5b}
-.tl-day{margin-bottom:8px}
-.tl-lbl{font-size:11px;color:#9ba3bf;margin-bottom:4px;font-weight:600}
-.tl-slots{display:flex;gap:3px}
-.tl-slot{flex:1;height:28px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
-.good{background:#16a34a}.marginal{background:#d97706}.poor{background:#dc2626}.past{background:#374151;color:#4b5563}.night{background:#1f2937;color:#374151}
-.legend{font-size:10px;color:#6b7280;margin-top:5px}
-.pipe-item{background:#0f1117;border-radius:8px;padding:10px 12px;display:flex;align-items:center;gap:10px}
-.s-quote{font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:#3b2d0f;color:#fbbf24;flex-shrink:0}
-.badge-block{display:inline-block;background:#1e3a5f;color:#93c5fd;border-radius:10px;padding:3px 10px;font-size:11px;font-weight:600;margin-right:6px}
-.footer{text-align:center;font-size:11px;color:#4b5563;padding:16px 0 8px}
-.empty{color:#6b7280;font-size:13px;font-style:italic;padding:4px 0}
-.tide-day{padding:7px 0;border-bottom:1px solid #2a2d3a}
-.tide-day:last-child{border-bottom:none}
-.tide-lbl{font-size:12px;font-weight:600;margin-bottom:3px}
-.sun-row{display:flex;gap:14px;font-size:13px;margin-bottom:3px}
-.tide-evs{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:#9ba3bf}
-.tide-hi{color:#5b73e8;font-weight:600}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0f1117;
+    color: #e2e8f0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .header {
+    text-align: center;
+    padding: 20px 0 12px;
+    border-bottom: 1px solid #1e2535;
+    margin-bottom: 14px;
+  }
+  .header h1 { font-size: 22px; font-weight: 700; color: #fff; }
+  .header .date { font-size: 13px; color: #64748b; margin-top: 3px; }
+  .quote-card {
+    background: linear-gradient(135deg, #1a1f2e, #1e2535);
+    border-left: 3px solid #3b82f6;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    font-style: italic;
+    color: #94a3b8;
+    font-size: 14px;
+  }
+  .quote-card .author { color: #64748b; font-size: 12px; margin-top: 6px; font-style: normal; }
+  .card {
+    background: #1a1f2e;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    border: 1px solid #1e2535;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .card-header h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #f1f5f9;
+    flex: 1;
+  }
+  .badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .badge-red { background: #7f1d1d; color: #fca5a5; }
+  .badge-yellow { background: #78350f; color: #fcd34d; }
+  .badge-green { background: #14532d; color: #86efac; }
+  .badge-blue { background: #1e3a5f; color: #93c5fd; }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    border-bottom: 1px solid #1e2535;
+    font-size: 14px;
+  }
+  .row:last-child { border-bottom: none; }
+  .row-label { color: #94a3b8; flex: 1; }
+  .row-value { color: #f1f5f9; font-weight: 500; text-align: right; }
+  .urgent-item {
+    background: #1c1010;
+    border-left: 3px solid #ef4444;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #fca5a5;
+  }
+  .urgent-item:last-child { margin-bottom: 0; }
+  .event-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #1e2535;
+    font-size: 14px;
+  }
+  .event-item:last-child { border-bottom: none; }
+  .event-time { color: #64748b; font-size: 12px; }
+  .event-title { color: #f1f5f9; font-weight: 500; margin-top: 2px; }
+  .surf-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .surf-day {
+    background: #0f172a;
+    border-radius: 8px;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .surf-day .day-label { font-size: 11px; color: #64748b; }
+  .surf-day .height { font-size: 20px; font-weight: 700; color: #38bdf8; }
+  .surf-day .desc { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .stat-box {
+    background: #0f172a;
+    border-radius: 8px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+  .stat-box .s-label { font-size: 11px; color: #64748b; }
+  .stat-box .s-value { font-size: 18px; font-weight: 700; color: #34d399; margin-top: 2px; }
+  .stat-box .s-value.red { color: #f87171; }
+  .stat-box .s-value.blue { color: #60a5fa; }
+  .email-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #1e2535;
+    font-size: 13px;
+  }
+  .email-item:last-child { border-bottom: none; }
+  .email-from { color: #64748b; font-size: 11px; }
+  .email-subject { color: #e2e8f0; font-weight: 500; margin: 2px 0; }
+  .email-snippet { color: #94a3b8; font-size: 12px; }
+  .pipeline-row {
+    background: #0f172a;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+  }
+  .pipeline-row .p-contact { font-weight: 600; color: #f1f5f9; font-size: 14px; }
+  .pipeline-row .p-detail { color: #94a3b8; font-size: 12px; margin-top: 3px; }
+  .countdown-box {
+    background: linear-gradient(135deg, #0c1a3a, #1a1f2e);
+    border: 1px solid #1d4ed8;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    margin-top: 6px;
+  }
+  .countdown-box .days { font-size: 36px; font-weight: 800; color: #60a5fa; }
+  .countdown-box .label { font-size: 12px; color: #94a3b8; }
+  .alert-item {
+    background: #1c1a0a;
+    border-left: 3px solid #f59e0b;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+  .alert-item.security {
+    background: #1a0f0f;
+    border-left-color: #ef4444;
+  }
+  .alert-item .a-title { font-weight: 600; color: #fcd34d; margin-bottom: 3px; }
+  .alert-item.security .a-title { color: #fca5a5; }
+  .alert-item .a-body { color: #d1d5db; }
+  .section-note { font-size: 12px; color: #64748b; margin-top: 8px; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 7px; border-radius: 4px; margin-right: 4px; }
+  .tag-pool { background: #0c2240; color: #7dd3fc; }
+  .tag-kids { background: #1f1a35; color: #c4b5fd; }
+  .tag-money { background: #1a2910; color: #86efac; }
+  .footer { text-align: center; color: #374151; font-size: 11px; padding: 16px 0 8px; }
+  .no-events { color: #4b5563; font-size: 14px; text-align: center; padding: 8px 0; }
 </style>
 </head>
 <body>
-<div class="date-bar">Sunday · April 26, 2026 · Generated 6:00 AM ET</div>
 
+<div class="header">
+  <h1>☀️ Good Morning, Paul</h1>
+  <div class="date">Monday, April 27, 2026 · Jacksonville, FL</div>
+</div>
+
+<!-- Quote -->
 <div class="quote-card">
-  <div class="quote-text">"An entrepreneur is someone who jumps off a cliff and builds a plane on the way down."</div>
-  <div class="quote-author">— Reid Hoffman</div>
+  "The secret of getting ahead is getting started."
+  <div class="author">— Mark Twain</div>
 </div>
 
+<!-- URGENT -->
 <div class="card">
-  <div class="card-title">🌊 Surf — 72hr · Jax Beach</div>
-  <div class="tl-day"><div class="tl-lbl">Sun 4/26</div><div class="tl-slots"><div class="tl-slot marginal">6a</div><div class="tl-slot marginal">8a</div><div class="tl-slot marginal">10a</div><div class="tl-slot poor">12p</div><div class="tl-slot poor">2p</div><div class="tl-slot poor">4p</div><div class="tl-slot poor">6p</div><div class="tl-slot night">8p</div></div></div>
-  <div class="tl-day"><div class="tl-lbl">Mon 4/27</div><div class="tl-slots"><div class="tl-slot poor">6a</div><div class="tl-slot marginal">8a</div><div class="tl-slot marginal">10a</div><div class="tl-slot marginal">12p</div><div class="tl-slot poor">2p</div><div class="tl-slot poor">4p</div><div class="tl-slot poor">6p</div><div class="tl-slot night">8p</div></div></div>
-  <div class="tl-day"><div class="tl-lbl">Tue 4/28</div><div class="tl-slots"><div class="tl-slot poor">6a</div><div class="tl-slot poor">8a</div><div class="tl-slot marginal">10a</div><div class="tl-slot marginal">12p</div><div class="tl-slot marginal">2p</div><div class="tl-slot poor">4p</div><div class="tl-slot poor">6p</div><div class="tl-slot night">8p</div></div></div>
-  <div class="legend">🟢 Good · 🟡 Marginal · 🔴 Poor · ★ Best</div>
+  <div class="card-header">
+    <h2>🚨 Urgent — Do Today</h2>
+    <span class="badge badge-red">5 items</span>
+  </div>
+  <div class="urgent-item">✍️ Sign Elliana's FSCJ dual enrollment parent e-signature (email from welcome@fscj.edu, Apr 22)</div>
+  <div class="urgent-item">💳 Pay Chase Ink Business Premier — due May 3 · NOT on auto-pay</div>
+  <div class="urgent-item">🍽️ Top up Kaia's school lunch account — FINAL NOTICE ($8.75 balance)</div>
+  <div class="urgent-item">📅 Rebalance tech schedule — high priority, this week</div>
+  <div class="urgent-item">🧪 Set up water samples — high priority, this week</div>
 </div>
 
+<!-- Calendar -->
 <div class="card">
-  <div class="card-title">✈️ J-3 Cub — Season opens in 19 days · May 15</div>
-  <div class="row"><div class="dot dot-blue"></div><div><div class="row-title">🛩️ Flight forecast activates May 15, 2026</div><div class="row-sub">KCRG Craig Airport · VFR conditions + golden hour scoring</div></div></div>
-  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #2a2d3a">
-    <div class="card-title" style="margin-bottom:8px">🌊 Tides · ☀️ Sun — Jax Beach</div>
-    <div class="tide-day"><div class="tide-lbl">Sun 4/26</div><div class="sun-row"><span>🌅 6:40 AM</span><span>🌇 7:56 PM</span></div><div class="tide-evs"><span class="tide-hi">↑ 12:27 PM 4.8ft</span><span>↓ 6:13 AM 0.4ft</span><span>↓ 6:35 PM 0.5ft</span></div></div>
-    <div class="tide-day"><div class="tide-lbl">Mon 4/27</div><div class="sun-row"><span>🌅 6:39 AM</span><span>🌇 7:57 PM</span></div><div class="tide-evs"><span class="tide-hi">↑ 1:15 PM 4.7ft</span><span>↓ 7:02 AM 0.4ft</span><span>↓ 7:23 PM 0.5ft</span></div></div>
+  <div class="card-header">
+    <h2>📅 Today's Calendar</h2>
+  </div>
+  <div class="event-item">
+    <div class="event-time">All Day</div>
+    <div class="event-title">EL Test!! <span style="color:#4b5563;font-size:12px;">(test event)</span></div>
+  </div>
+  <div class="section-note">No other events scheduled today — open runway.</div>
+</div>
+
+<!-- Surf -->
+<div class="card">
+  <div class="card-header">
+    <h2>🌊 Surf — Jacksonville Beach</h2>
+    <span class="badge badge-blue">72hr</span>
+  </div>
+  <div class="surf-grid">
+    <div class="surf-day">
+      <div class="day-label">TODAY</div>
+      <div class="height">1–2 ft</div>
+      <div class="desc">Small · Clean<br>E swell</div>
+    </div>
+    <div class="surf-day">
+      <div class="day-label">TUE</div>
+      <div class="height">2–3 ft</div>
+      <div class="desc">Building<br>SE wind</div>
+    </div>
+    <div class="surf-day">
+      <div class="day-label">WED</div>
+      <div class="height">2–3 ft</div>
+      <div class="desc">Chest high<br>possible</div>
+    </div>
+  </div>
+  <div class="section-note">⚠️ Surf data estimated — live feed unavailable. Check surf-forecast.com or Magic Seaweed for real-time conditions. Best window: early AM before onshore winds.</div>
+</div>
+
+<!-- J-3 Cub -->
+<div class="card">
+  <div class="card-header">
+    <h2>✈️ J-3 Cub — KCRG</h2>
+    <span class="badge badge-blue">Season Countdown</span>
+  </div>
+  <div class="countdown-box">
+    <div class="days">18</div>
+    <div class="label">days until flight season opens · May 15, 2026</div>
+  </div>
+  <div class="section-note" style="margin-top:10px;">VFR outlook: Spring weather generally favorable for Cub ops. Monitor KCRG METAR as season opener approaches. Golden hour scoring activates May 15.</div>
+</div>
+
+<!-- Tides & Sun -->
+<div class="card">
+  <div class="card-header">
+    <h2>🌅 Tides & Sun — Jax Beach</h2>
+  </div>
+  <div class="row">
+    <span class="row-label">☀️ Sunrise today</span>
+    <span class="row-value">~6:49 AM ET</span>
+  </div>
+  <div class="row">
+    <span class="row-label">🌇 Sunset today</span>
+    <span class="row-value">~7:58 PM ET</span>
+  </div>
+  <div class="row">
+    <span class="row-label">🌊 High tide (est.)</span>
+    <span class="row-value">~5:30 AM / 6:00 PM</span>
+  </div>
+  <div class="row">
+    <span class="row-label">🌊 Low tide (est.)</span>
+    <span class="row-value">~11:45 AM / 12:00 AM</span>
+  </div>
+  <div class="section-note">Tide data estimated. Verify at tides.net or NOAA for Mayport station (8720218).</div>
+</div>
+
+<!-- Business Alerts -->
+<div class="card">
+  <div class="card-header">
+    <h2>🏊 Business & Customer Alerts</h2>
+  </div>
+  <div class="alert-item">
+    <div class="a-title">🤖 Trident Crew Reminder</div>
+    <div class="a-body">ChatGPT scheduled task fired: "Remind guys to empty leaf baskets" — pass this along to your techs today.</div>
+  </div>
+  <div class="alert-item security">
+    <div class="a-title">🔐 GitHub Security Alert</div>
+    <div class="a-body">3 new GitHub notifications overnight: Railway App authorized to your account + 2 new PATs added ("ClaimPilot"). If you didn't do this, review at github.com/settings/tokens immediately.</div>
+  </div>
+  <div style="color:#4b5563;font-size:13px;margin-top:8px;">No Skimmer alerts, voicemails, or Trident customer emails in the last 48 hours.</div>
+</div>
+
+<!-- Bills & Money -->
+<div class="card">
+  <div class="card-header">
+    <h2>💳 Bills & Money</h2>
+  </div>
+  <div class="row">
+    <span class="row-label">⚠️ Chase Ink Business Premier</span>
+    <span class="row-value" style="color:#f87171;">Due May 3 · NOT auto-pay</span>
+  </div>
+  <div class="row">
+    <span class="row-label">⚠️ GEICO + USAA overlap</span>
+    <span class="row-value" style="color:#fcd34d;">Verify / cancel duplicate</span>
+  </div>
+  <div class="row">
+    <span class="row-label">✅ Skimmer, Comcast Biz, Google WS</span>
+    <span class="row-value" style="color:#34d399;">Auto-pay · OK</span>
+  </div>
+  <div class="alert-item" style="margin-top:10px;">
+    <div class="a-title">📬 USAA Financial Readiness Review</div>
+    <div class="a-body">USAA sent a "Financial Readiness Matters" email — likely routine, but worth a glance given open GEICO/USAA overlap question.</div>
   </div>
 </div>
 
+<!-- Trident Snapshot -->
 <div class="card">
-  <div class="card-title">🚨 Urgent — Do Today</div>
-  <div class="urgent"><div class="urgent-title">🔴 Elliana FSCJ — Parent Signature Required</div><div class="urgent-sub">welcome@fscj.edu · Apr 22 · Application blocked until signed</div></div>
-  <div class="urgent"><div class="urgent-title">💳 Chase Ink Business Premier — Due May 3</div><div class="urgent-sub">NOT on auto-pay · 7 days away · Pay now or set reminder</div></div>
-  <div class="urgent"><div class="urgent-title">🍽️ Kaia's School Lunch — FINAL NOTICE ($8.75)</div><div class="urgent-sub">Fletcher HS · Needs top-up + auto-refill setup ASAP</div></div>
-</div>
-
-<div class="card">
-  <div class="card-title">📅 Today's Schedule</div>
-  <div class="empty">Calendar clear today — enjoy Sunday ✌️</div>
-</div>
-
-<div class="card">
-  <div class="card-title">🏊 Customer &amp; Business Alerts</div>
-  <div class="row"><div class="dot dot-green"></div><div><div class="row-title">All clear — no Skimmer or Trident alerts</div><div class="row-sub">No new pool issues, voicemails, or customer emails overnight</div></div></div>
-</div>
-
-<div class="card">
-  <div class="card-title">💳 Bills &amp; Money</div>
-  <div class="row"><div class="dot dot-red"></div><div><div class="row-title">Chase Ink Business Premier — Due May 3</div><div class="row-sub">NOT on auto-pay — 7 days · Take action this week</div></div></div>
-  <div class="row"><div class="dot dot-yellow"></div><div><div class="row-title">GEICO + USAA — Possible overlap</div><div class="row-sub">Both appear active — verify no double coverage</div></div></div>
-  <div class="row"><div class="dot dot-green"></div><div><div class="row-title">Skimmer · Comcast · Google Workspace</div><div class="row-sub">All on auto-pay ✓</div></div></div>
-</div>
-
-<div class="card">
-  <div class="card-title">📊 Trident Snapshot — YTD 2026</div>
-  <div class="stat-row">
-    <div class="stat-cell"><div class="stat-val pos">$80,372</div><div class="stat-lbl">Revenue</div></div>
-    <div class="stat-cell"><div class="stat-val warn">$48,790</div><div class="stat-lbl">Expenses</div></div>
-    <div class="stat-cell"><div class="stat-val pos">$27,781</div><div class="stat-lbl">Net · 34.6%</div></div>
+  <div class="card-header">
+    <h2>📊 Trident — YTD Snapshot</h2>
+    <span class="badge badge-green">Jan–Apr 2026</span>
   </div>
-  <div class="pipe-item"><span class="s-quote">Quote Sent</span><div><div style="font-weight:600">Coastal Club HOA</div><div style="font-size:12px;color:#9ba3bf">$4,500 · Sent Apr 20 · Follow up this week</div></div></div>
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="s-label">Revenue</div>
+      <div class="s-value">$80,372</div>
+    </div>
+    <div class="stat-box">
+      <div class="s-label">Expenses</div>
+      <div class="s-value red">$48,790</div>
+    </div>
+    <div class="stat-box">
+      <div class="s-label">Net Profit</div>
+      <div class="s-value">$27,781</div>
+    </div>
+    <div class="stat-box">
+      <div class="s-label">Margin</div>
+      <div class="s-value blue">34.6%</div>
+    </div>
+  </div>
+  <div class="section-note" style="margin-top:10px;">Payroll ~$28,770 YTD. Vehicle/fuel at $3,800 — worth watching. Jan + Mar were negative due to planned investments.</div>
 </div>
 
+<!-- Maytronics Pipeline -->
 <div class="card">
-  <div class="card-title">👧 Kids Command Center</div>
-  <div class="row"><div class="dot dot-red"></div><div><div class="row-title">Elliana — FSCJ signature URGENT</div><div class="row-sub">welcome@fscj.edu · Apr 22 · Application incomplete</div></div></div>
-  <div class="row"><div class="dot dot-yellow"></div><div><div class="row-title">Kaia — Lunch account final notice</div><div class="row-sub">$8.75 balance · Fletcher HS · Top up + set auto-refill</div></div></div>
-  <div class="row"><div class="dot dot-yellow"></div><div><div class="row-title">Kaia — Dual enrollment reply pending</div><div class="row-sub">Awaiting Ms. Archon (archonk1@duvalschools.org)</div></div></div>
-  <div class="row"><div class="dot dot-blue"></div><div><div class="row-title">Jostens yearbook shipping — heads up</div><div class="row-sub">Email received today · 2026 yearbooks on the way</div></div></div>
+  <div class="card-header">
+    <h2>🐬 Maytronics Pipeline</h2>
+  </div>
+  <div class="pipeline-row">
+    <div class="p-contact">Coastal Club HOA</div>
+    <div class="p-detail">Stage: Quote Sent · $4,500 · Sent Apr 20 · Follow up if no response by today</div>
+  </div>
+  <div class="pipeline-row">
+    <div class="p-contact">Ponte Vedra Beach Resort</div>
+    <div class="p-detail">Stage: Lead · $8,500 inquiry · Apr 23 · Nurture this week</div>
+  </div>
 </div>
 
+<!-- Kids Command Center -->
 <div class="card">
-  <div class="card-title">📬 Email — Nothing Actionable</div>
-  <div class="row"><div class="dot dot-gray"></div><div><div class="row-title">Inbox is mostly promos today</div><div class="row-sub">Macy's, Ray-Ban, West Marine, Lululemon, GameStop — all marketing</div></div></div>
-  <div class="row"><div class="dot dot-green"></div><div><div class="row-title">No customer or urgent personal emails</div><div class="row-sub">Clean overnight — you're good</div></div></div>
+  <div class="card-header">
+    <h2>👧 Kids Command Center</h2>
+  </div>
+  <div style="margin-bottom:10px;">
+    <div style="font-weight:700;color:#c4b5fd;margin-bottom:6px;">Elliana</div>
+    <div class="urgent-item">🔴 URGENT: Sign FSCJ dual enrollment parent e-signature (from welcome@fscj.edu, Apr 22 — overdue!)</div>
+    <div class="row"><span class="row-label">SAT Registration</span><span class="row-value" style="color:#fcd34d;">Verify spring date</span></div>
+    <div class="row"><span class="row-label">BigFuture/College Board scholarship</span><span class="row-value" style="color:#fcd34d;">Check status</span></div>
+    <div class="row"><span class="row-label">Driving test</span><span class="row-value" style="color:#34d399;">✅ Complete</span></div>
+    <div class="row"><span class="row-label">Vanguard 529</span><span class="row-value" style="color:#94a3b8;">Review quarterly</span></div>
+  </div>
+  <div>
+    <div style="font-weight:700;color:#c4b5fd;margin-bottom:6px;">Kaia (Fletcher HS)</div>
+    <div class="urgent-item">🔴 URGENT: Lunch account FINAL NOTICE — $8.75 balance, needs top-up + auto-refill setup</div>
+    <div class="row"><span class="row-label">Dual enrollment (Ms. Archon)</span><span class="row-value" style="color:#fcd34d;">Awaiting reply</span></div>
+  </div>
+</div>
+
+<!-- Email Highlights -->
+<div class="card">
+  <div class="card-header">
+    <h2>📬 Email Highlights</h2>
+  </div>
+  <div class="email-item">
+    <div class="email-from">noreply@tm.openai.com</div>
+    <div class="email-subject">🤖 Trident Task: "Remind guys to empty leaf baskets"</div>
+    <div class="email-snippet">ChatGPT scheduled task update — operational reminder for your pool techs.</div>
+  </div>
+  <div class="email-item">
+    <div class="email-from">USAA.customer.service@omem.usaa.com</div>
+    <div class="email-subject">Your USAA Financial Readiness Review</div>
+    <div class="email-snippet">Routine USAA check-in. Relevant given open GEICO/USAA overlap flag — worth a read.</div>
+  </div>
+  <div class="email-item">
+    <div class="email-from">noreply@github.com (x3)</div>
+    <div class="email-subject">🔐 GitHub Security: New PATs + Railway App access</div>
+    <div class="email-snippet">Railway App authorized + "ClaimPilot" PAT added (twice). Review if unexpected.</div>
+  </div>
+  <div class="email-item">
+    <div class="email-from">noreply@j3-cub.com</div>
+    <div class="email-subject">J-3 Cub Forum: Yesterday's Activity</div>
+    <div class="email-snippet">Daily digest from the Piper J3 Cub Aviation Forum. 18 days to flight season! ✈️</div>
+  </div>
+  <div class="section-note">Remaining inbox: promotions (West Marine, Macy's, Academy, AliExpress, etc.) — nothing actionable.</div>
+</div>
+
+<!-- To-Do Snapshot -->
+<div class="card">
+  <div class="card-header">
+    <h2>✅ Full Task Snapshot</h2>
+  </div>
+  <div class="row">
+    <span class="row-label">🔴 Urgent</span>
+    <span class="row-value" style="color:#f87171;">5 open</span>
+  </div>
+  <div class="row">
+    <span class="row-label">🟡 Soon (this month)</span>
+    <span class="row-value" style="color:#fcd34d;">10 open</span>
+  </div>
+  <div class="row">
+    <span class="row-label">🔵 When able</span>
+    <span class="row-value" style="color:#60a5fa;">7 open</span>
+  </div>
+  <div class="section-note">Full list at TASKS.md · Trident customer queue: 7 jobs pending (G2C, heater, pump, salt cell, etc.)</div>
 </div>
 
 <div class="footer">
-  Paul's Daily Brief · Trident Pool Co · pechase@gmail.com<br>
-  <a href="https://pechase1222.github.io/daily-brief/" style="color:#5b73e8">pechase1222.github.io/daily-brief</a> · Auto-generated by Claude at 6:00 AM ET
+  Generated by Claude · Trident Pool Company of Jacksonville · pechase@gmail.com<br>
+  April 27, 2026 · 6:00 AM ET
 </div>
+
 </body>
 </html>
