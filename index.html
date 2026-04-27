@@ -117,13 +117,14 @@
     height: 44px;
     border-radius: 5px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
     color: #fff;
-    text-align: center;
     line-height: 1.3;
+    text-align: center;
   }
   .slot-good { background: #16a34a; }
   .slot-marginal { background: #d97706; }
@@ -198,6 +199,22 @@
   .urgent-title { font-weight: 700; font-size: 13px; color: #fca5a5; }
   .urgent-sub { font-size: 12px; color: #f87171; margin-top: 3px; }
 
+  /* Claude can handle */
+  .claude-item {
+    background: #0d1a2e;
+    border: 1px solid #1e3a5f;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .claude-item:last-child { margin-bottom: 0; }
+  .claude-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+  .claude-text { font-size: 13px; color: #93c5fd; font-weight: 600; }
+  .claude-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
   /* Footer */
   .footer {
     text-align: center;
@@ -214,8 +231,8 @@
 
 <!-- QUOTE -->
 <div class="quote-card">
-  <div class="quote-text">"The ocean doesn't care about your to-do list — paddle out anyway, and the list will still be there when you get back."</div>
-  <div class="quote-author">— Paul's Brief, Monday Reminder</div>
+  <div class="quote-text">"The ocean does not care about your to-do list. Paddle out anyway — the list will still be there."</div>
+  <div class="quote-author">— Wisdom for entrepreneurs who surf</div>
 </div>
 
 <!-- SURF -->
@@ -223,51 +240,51 @@
   <div class="card-title">🌊 Surf — 72hr · Jax Beach</div>
 
   <div class="tl-day">
-    <div class="tl-label">Today — Mon Apr 27 · 3–4.6ft · Overcast · NNE 13–15mph</div>
+    <div class="tl-label">Today — Mon Apr 27</div>
     <div class="tl-slots">
-      <div class="tl-slot slot-marginal">Dawn<br>3.1ft<br>NNE 13</div>
-      <div class="tl-slot slot-marginal">Morn<br>4.1ft<br>NNE 14</div>
-      <div class="tl-slot slot-marginal">Aftn<br>4.6ft<br>NNE 15</div>
-      <div class="tl-slot slot-marginal">Eve<br>4.1ft<br>NNE 11</div>
+      <div class="tl-slot slot-poor">Dawn<br>1.5ft<br>Onshore</div>
+      <div class="tl-slot slot-poor">Morn<br>1.5ft<br>Onshore</div>
+      <div class="tl-slot slot-poor">Aftn<br>1.5ft<br>Onshore</div>
+      <div class="tl-slot slot-poor">Eve<br>1.5ft<br>Onshore</div>
     </div>
   </div>
 
   <div class="tl-day">
-    <div class="tl-label">Tue Apr 28 · 2.5–3ft · ☀️ Clear · Light wind — Best Day</div>
+    <div class="tl-label">Tomorrow — Tue Apr 28 · NE swell building</div>
     <div class="tl-slots">
-      <div class="tl-slot slot-good slot-best">Dawn<br>3.0ft<br>ENE 5</div>
-      <div class="tl-slot slot-good">Morn<br>2.8ft<br>ESE 4</div>
-      <div class="tl-slot slot-marginal">Aftn<br>2.6ft<br>ENE 7</div>
-      <div class="tl-slot slot-marginal">Eve<br>2.5ft<br>ESE 8</div>
+      <div class="tl-slot slot-marginal slot-best">Dawn<br>2-3ft<br>NE</div>
+      <div class="tl-slot slot-marginal">Morn<br>2-3ft<br>NE</div>
+      <div class="tl-slot slot-poor">Aftn<br>2ft<br>Onshore</div>
+      <div class="tl-slot slot-night">Eve</div>
     </div>
   </div>
 
   <div class="tl-day">
-    <div class="tl-label">Wed Apr 29 · 2–2.2ft · Overcast · Offshore (S–WNW)</div>
+    <div class="tl-label">Wed Apr 29</div>
     <div class="tl-slots">
-      <div class="tl-slot slot-good">Dawn<br>2.2ft<br>S 4</div>
-      <div class="tl-slot slot-marginal">Morn<br>2.1ft<br>S 8</div>
-      <div class="tl-slot slot-marginal">Aftn<br>1.9ft<br>WSW 10</div>
-      <div class="tl-slot slot-marginal">Eve<br>2.2ft<br>WNW 7</div>
+      <div class="tl-slot slot-marginal">Dawn<br>2-3ft<br>NE</div>
+      <div class="tl-slot slot-marginal">Morn<br>2ft<br>NE</div>
+      <div class="tl-slot slot-poor">Aftn<br>2ft<br>Onshore</div>
+      <div class="tl-slot slot-night">Eve</div>
     </div>
   </div>
 
-  <div class="legend">🟢 Good &nbsp;·&nbsp; 🟡 Marginal &nbsp;·&nbsp; 🔴 Poor &nbsp;·&nbsp; ★ Best window · Tue dawn 3ft + clear + 5mph wind</div>
+  <div class="legend">🟢 Good (2-6ft, offshore) &nbsp;·&nbsp; 🟡 Marginal &nbsp;·&nbsp; 🔴 Poor &nbsp;·&nbsp; ★ Best window · Swell arrives tonight ~11PM</div>
 </div>
 
 <!-- FLIGHT -->
 <div class="card">
   <div class="card-title">✈️ J-3 Cub — 72hr · KCRG</div>
-  <div class="empty">✈️ Season opens May 15, 2026 — 18 days to go</div>
+  <div class="empty">✈️ Season opens May 15, 2026 — 18 days to go. Start planning your first golden hour flight.</div>
   <div class="legend">🟢 VFR Good &nbsp;·&nbsp; 🟡 Marginal &nbsp;·&nbsp; 🔴 IFR/Poor</div>
 
   <!-- TIDES -->
   <div class="tide-section">
-    <div class="tide-title">🌊 Tides &amp; ☀️ Sun</div>
+    <div class="tide-title">🌊 Tides &amp; ☀️ Sun · Station 8720218 · Mayport</div>
 
     <div class="tide-day">
       <div class="tide-day-lbl">Mon Apr 27</div>
-      <div class="sun-row">🌅 6:46a <span>sunrise</span> &nbsp; 🌇 8:01p <span>sunset</span></div>
+      <div class="sun-row">🌅 6:46a <span>sunrise</span> &nbsp; 🌇 7:59p <span>sunset</span></div>
       <div class="tide-events">
         <span class="tide-hi">↑ High 4.6ft @ 6:18a</span>
         <span class="tide-lo">↓ Low 0.1ft @ 12:09p</span>
@@ -277,8 +294,9 @@
 
     <div class="tide-day">
       <div class="tide-day-lbl">Tue Apr 28</div>
-      <div class="sun-row">🌅 6:45a <span>sunrise</span> &nbsp; 🌇 8:01p <span>sunset</span></div>
+      <div class="sun-row">🌅 6:45a <span>sunrise</span> &nbsp; 🌇 8:00p <span>sunset</span></div>
       <div class="tide-events">
+        <span class="tide-lo">↓ Low 0.2ft @ 12:41a</span>
         <span class="tide-hi">↑ High 4.5ft @ 7:07a</span>
         <span class="tide-lo">↓ Low 0.0ft @ 12:55p</span>
         <span class="tide-hi">↑ High 5.0ft @ 7:38p</span>
@@ -287,8 +305,9 @@
 
     <div class="tide-day">
       <div class="tide-day-lbl">Wed Apr 29</div>
-      <div class="sun-row">🌅 6:44a <span>sunrise</span> &nbsp; 🌇 8:02p <span>sunset</span></div>
+      <div class="sun-row">🌅 6:44a <span>sunrise</span> &nbsp; 🌇 8:01p <span>sunset</span></div>
       <div class="tide-events">
+        <span class="tide-lo">↓ Low 0.1ft @ 1:31a</span>
         <span class="tide-hi">↑ High 4.5ft @ 7:51a</span>
         <span class="tide-lo">↓ Low 0.0ft @ 1:37p</span>
         <span class="tide-hi">↑ High 5.1ft @ 8:21p</span>
@@ -300,20 +319,17 @@
 <!-- URGENT TASKS -->
 <div class="card">
   <div class="card-title">🚨 Urgent — Do Today</div>
-
   <div class="urgent-block">
-    <div class="urgent-title">📝 Sign Elliana's FSCJ Parent E-Signature</div>
-    <div class="urgent-sub">Dual enrollment application — email from welcome@fscj.edu, Apr 22. 5 days old. Act today.</div>
+    <div class="urgent-title">✍️ Elliana's FSCJ Parent E-Signature</div>
+    <div class="urgent-sub">Email from welcome@fscj.edu · Apr 22 · Dual enrollment approval needed · Claude can pull up the form link</div>
   </div>
-
   <div class="urgent-block">
     <div class="urgent-title">💳 Chase Ink Business Premier — Due May 3</div>
-    <div class="urgent-sub">NOT on auto-pay. 6 days until due. Pay this week to avoid late fee.</div>
+    <div class="urgent-sub">NOT on auto-pay · 6 days away · Pay manually to avoid late fee</div>
   </div>
-
   <div class="urgent-block">
-    <div class="urgent-title">🍽️ Kaia's School Lunch — FINAL NOTICE ($8.75)</div>
-    <div class="urgent-sub">Fletcher HS account at $8.75. Final notice. Top up + set auto-refill today.</div>
+    <div class="urgent-title">🍽️ Kaia's School Lunch Account — FINAL NOTICE</div>
+    <div class="urgent-sub">Balance: $8.75 · Fletcher HS · Top up + set auto-refill</div>
   </div>
 </div>
 
@@ -323,8 +339,8 @@
   <div class="row">
     <div class="dot dot-blue"></div>
     <div class="row-content">
-      <div class="row-title">EL Test</div>
-      <div class="row-sub">All day · Calendar note</div>
+      <div class="row-title">EL Test!!</div>
+      <div class="row-sub">All day · Personal calendar</div>
     </div>
   </div>
 </div>
@@ -332,27 +348,27 @@
 <!-- CUSTOMER ALERTS -->
 <div class="card">
   <div class="card-title">🏊 Customer &amp; Business Alerts</div>
-  <div class="empty">No Skimmer alerts — all pools nominal ✓</div>
+  <div class="empty">No Skimmer alerts in last 48hrs — all pools nominal ✅</div>
   <div style="margin-top:10px;">
     <div class="row">
       <div class="dot dot-yellow"></div>
       <div class="row-content">
-        <div class="row-title">Trident inbox quiet — no new messages to hello@tridentpoolcojax.com</div>
-        <div class="row-sub">Last checked within 48 hours</div>
+        <div class="row-title">No new hello@tridentpoolcojax.com emails</div>
+        <div class="row-sub">Inbox quiet on business side · Good Monday morning</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="dot dot-yellow"></div>
+      <div class="row-content">
+        <div class="row-title">Coastal Club HOA — Quote Follow-Up Due</div>
+        <div class="row-sub">$4,500 quote sent Apr 20 · 7 days since · Time to nudge</div>
       </div>
     </div>
     <div class="row">
       <div class="dot dot-blue"></div>
       <div class="row-content">
-        <div class="row-title">Coastal Club HOA — Quote follow-up due</div>
-        <div class="row-sub">$4,500 quote sent Apr 20 · 7 days ago · Consider a follow-up call today</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="dot dot-blue"></div>
-      <div class="row-content">
-        <div class="row-title">Ponte Vedra Beach Resort — Warm lead</div>
-        <div class="row-sub">$8,500 Maytronics inquiry (Apr 23) · 4 days old · Nurture this week</div>
+        <div class="row-title">Ponte Vedra Beach Resort — Lead to Nurture</div>
+        <div class="row-sub">$8,500 Maytronics inquiry · Apr 23 · Needs follow-up</div>
       </div>
     </div>
   </div>
@@ -365,28 +381,21 @@
     <div class="dot dot-red"></div>
     <div class="row-content">
       <div class="row-title">Chase Ink Business Premier</div>
-      <div class="row-sub">Due May 3 · NOT on auto-pay · Action required this week</div>
+      <div class="row-sub">Due May 3 · NOT on auto-pay · Action required in next 6 days</div>
     </div>
   </div>
   <div class="row">
     <div class="dot dot-yellow"></div>
     <div class="row-content">
-      <div class="row-title">Google Play — Subscription charge</div>
-      <div class="row-sub">Receipt Apr 26 · Review if expected or zombie subscription</div>
+      <div class="row-title">GEICO + USAA — Verify No Double Coverage</div>
+      <div class="row-sub">Both appear active · Cancel duplicate to save $$$</div>
     </div>
   </div>
   <div class="row">
     <div class="dot dot-yellow"></div>
     <div class="row-content">
       <div class="row-title">Poiema Services LLC — Invoice 1756</div>
-      <div class="row-sub">Pre-Purchase Inspection · Apr 24 · Verify this is expected / approved</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="dot dot-yellow"></div>
-    <div class="row-content">
-      <div class="row-title">GEICO + USAA — Possible double coverage</div>
-      <div class="row-sub">Verify no overlap, cancel duplicate to save money</div>
+      <div class="row-sub">Pre-Purchase Inspection · Apr 24 · Needs review / payment</div>
     </div>
   </div>
   <div class="row">
@@ -406,14 +415,13 @@
     <div class="stat-cell"><div class="stat-val warn">$48,790</div><div class="stat-lbl">Expenses</div></div>
     <div class="stat-cell"><div class="stat-val pos">$27,781</div><div class="stat-lbl">Net · 34.6%</div></div>
   </div>
-
   <div class="pipe-item">
     <span class="stage-badge s-quote">QUOTE</span>
     <div><strong>Coastal Club HOA</strong><br><small style="color:var(--muted)">$4,500 · Sent Apr 20 · Follow up today</small></div>
   </div>
   <div class="pipe-item">
     <span class="stage-badge s-lead">LEAD</span>
-    <div><strong>Ponte Vedra Beach Resort</strong><br><small style="color:var(--muted)">$8,500 Maytronics · Inquiry Apr 23</small></div>
+    <div><strong>Ponte Vedra Beach Resort</strong><br><small style="color:var(--muted)">$8,500 Maytronics inquiry · Apr 23 · Nurture</small></div>
   </div>
 </div>
 
@@ -423,43 +431,29 @@
   <div class="row">
     <div class="dot dot-red"></div>
     <div class="row-content">
-      <div class="row-title">Elliana — FSCJ Parent E-Signature 🚨</div>
-      <div class="row-sub">Dual enrollment · Email from welcome@fscj.edu (Apr 22) · Sign today</div>
+      <div class="row-title">Elliana — FSCJ E-Signature URGENT</div>
+      <div class="row-sub">Parent approval needed for dual enrollment · Email from welcome@fscj.edu Apr 22</div>
     </div>
   </div>
   <div class="row">
     <div class="dot dot-yellow"></div>
     <div class="row-content">
       <div class="row-title">Elliana — SAT Registration</div>
-      <div class="row-sub">Verify spring date is booked · BigFuture / College Board scholarship status</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="dot dot-yellow"></div>
-    <div class="row-content">
-      <div class="row-title">Elliana — Vanguard 529</div>
-      <div class="row-sub">Review quarterly balance when able</div>
+      <div class="row-sub">Verify spring date is booked · BigFuture/College Board scholarship — check status</div>
     </div>
   </div>
   <div class="row">
     <div class="dot dot-red"></div>
     <div class="row-content">
-      <div class="row-title">Kaia — Lunch Account FINAL NOTICE 🚨</div>
-      <div class="row-sub">Fletcher HS · $8.75 balance · Top up + set auto-refill today</div>
+      <div class="row-title">Kaia — Lunch Account FINAL NOTICE</div>
+      <div class="row-sub">$8.75 balance · Fletcher HS · Top up + set auto-refill today</div>
     </div>
   </div>
   <div class="row">
     <div class="dot dot-yellow"></div>
     <div class="row-content">
-      <div class="row-title">Kaia — Dual Enrollment (Fletcher / Ms. Archon)</div>
-      <div class="row-sub">Email sent to archonk1@duvalschools.org · Awaiting reply</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="dot dot-gray"></div>
-    <div class="row-content">
-      <div class="row-title">Duval Schools — Bus App + Air Quality alerts</div>
-      <div class="row-sub">Edulog Parent App temporary issue · Air quality monitoring in effect</div>
+      <div class="row-title">Kaia — Dual Enrollment</div>
+      <div class="row-sub">Awaiting reply from Ms. Archon (archonk1@duvalschools.org) · Resent Apr 25</div>
     </div>
   </div>
 </div>
@@ -470,43 +464,90 @@
   <div class="row">
     <div class="dot dot-red"></div>
     <div class="row-content">
-      <div class="row-title">FSCJ — Elliana's FSCJ Approval Needed</div>
-      <div class="row-sub">welcome@fscj.edu · Apr 22 · Parent e-signature required for dual enrollment</div>
+      <div class="row-title">FSCJ — Parent Signature for Elliana</div>
+      <div class="row-sub">welcome@fscj.edu · Apr 22 · Dual enrollment approval — click to sign</div>
     </div>
   </div>
   <div class="row">
     <div class="dot dot-yellow"></div>
     <div class="row-content">
-      <div class="row-title">Poiema Services — Invoice 1756 (Pre-Purchase Inspection)</div>
-      <div class="row-sub">quickbooks@notification.intuit.com · Apr 24 · Verify this purchase is expected</div>
+      <div class="row-title">Poiema Services LLC — Invoice 1756</div>
+      <div class="row-sub">quickbooks@notification.intuit.com · Apr 24 · Pre-Purchase Inspection · Review &amp; pay</div>
     </div>
   </div>
   <div class="row">
-    <div class="dot dot-yellow"></div>
+    <div class="dot dot-blue"></div>
     <div class="row-content">
-      <div class="row-title">Google Play — Subscription Receipt</div>
-      <div class="row-sub">Apr 26 · Order SOP.3354-7356... · Confirm it's a subscription you want to keep</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="dot dot-gray"></div>
-    <div class="row-content">
-      <div class="row-title">Duval Schools — Password Recovery Email</div>
-      <div class="row-sub">FIMService@duvalschools.org · Apr 24 · Initiated password reset — was this you?</div>
+      <div class="row-title">Google Play Receipt — Apr 26</div>
+      <div class="row-sub">Subscription auto-charged · SOP.3354-7356-5988-73793 · Looks routine</div>
     </div>
   </div>
   <div class="row">
     <div class="dot dot-gray"></div>
     <div class="row-content">
-      <div class="row-title">Fletcher HS — Weekly Update</div>
-      <div class="row-sub">ledfordj@duvalschools.org · Apr 21 · Kaia's school newsletter</div>
+      <div class="row-title">Duval Schools — Password Reset Email</div>
+      <div class="row-sub">FIMService@duvalschools.org · Apr 24 · Check if you initiated this reset</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="dot dot-gray"></div>
+    <div class="row-content">
+      <div class="row-title">Duval Schools — Edulog Bus App Issue</div>
+      <div class="row-sub">noreply@duvalschools.org · Apr 23 · Vendor fix in progress · No action needed</div>
+    </div>
+  </div>
+</div>
+
+<!-- CLAUDE CAN HANDLE -->
+<div class="card">
+  <div class="card-title">🤖 Claude Can Handle This</div>
+  <div class="claude-item">
+    <div class="claude-icon">✍️</div>
+    <div>
+      <div class="claude-text">Pull up Elliana's FSCJ e-signature form</div>
+      <div class="claude-sub">Fetch the form link from welcome@fscj.edu email and open it for you to sign</div>
+    </div>
+  </div>
+  <div class="claude-item">
+    <div class="claude-icon">📧</div>
+    <div>
+      <div class="claude-text">Follow-up email to Coastal Club HOA</div>
+      <div class="claude-sub">Draft a quick nudge on the $4,500 pool service quote — just say approve</div>
+    </div>
+  </div>
+  <div class="claude-item">
+    <div class="claude-icon">🤝</div>
+    <div>
+      <div class="claude-text">Nurture email to Ponte Vedra Beach Resort</div>
+      <div class="claude-sub">$8,500 Maytronics lead — draft a warm intro/follow-up for your approval</div>
+    </div>
+  </div>
+  <div class="claude-item">
+    <div class="claude-icon">🍽️</div>
+    <div>
+      <div class="claude-text">Look up Kaia's lunch account top-up link</div>
+      <div class="claude-sub">Find the MySchoolBucks or Duval Schools payment portal and walk you through it</div>
+    </div>
+  </div>
+  <div class="claude-item">
+    <div class="claude-icon">🔍</div>
+    <div>
+      <div class="claude-text">Investigate Poiema Services invoice</div>
+      <div class="claude-sub">Pre-purchase inspection for what? Pull the full invoice details from email</div>
+    </div>
+  </div>
+  <div class="claude-item">
+    <div class="claude-icon">🛡️</div>
+    <div>
+      <div class="claude-text">GEICO vs USAA insurance overlap check</div>
+      <div class="claude-sub">Search your emails for both policies, identify what's doubled, flag the one to cancel</div>
     </div>
   </div>
 </div>
 
 <div class="footer">
   Paul's Daily Brief · Trident Pool Co · pechase@gmail.com<br>
-  Auto-generated by Claude · Monday, April 27, 2026 · 6:00 AM ET
+  Auto-generated by Claude at 6:00 AM ET · <a href="https://pechase1222.github.io/daily-brief/" style="color:#4b5563">Live Brief</a>
 </div>
 
 </body>
