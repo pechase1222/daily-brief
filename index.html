@@ -5,123 +5,614 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Paul's Brief · 2026-04-29</title>
+<title>Paul's Brief · 2026-05-01</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a; --text: #e8eaf0; --muted: #9ba3bf; --accent: #5b73e8; --green: #3ecf8e; --red: #e85b5b; --yellow: #f59e0b; --purple: #8b5cf6; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); padding: 12px; font-size: 15px; line-height: 1.5; max-width: 600px; margin: 0 auto; }
-  .date-bar { text-align: center; font-size: 12px; color: var(--muted); padding: 6px 0 14px; letter-spacing: .05em; text-transform: uppercase; }
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; margin-bottom: 12px; }
-  .card-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 10px; }
-  .quote-card { background: linear-gradient(135deg, #1a1d27, #1e1535); border: 1px solid #3d2d7a; border-radius: 14px; padding: 16px; margin-bottom: 12px; text-align: center; }
-  .quote-text { font-size: 16px; font-style: italic; color: #d4c8f0; line-height: 1.6; margin-bottom: 8px; }
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --border: #2a2d3a;
+    --text: #e8eaf0;
+    --muted: #9ba3bf;
+    --accent: #5b73e8;
+    --green: #3ecf8e;
+    --red: #e85b5b;
+    --yellow: #f59e0b;
+    --purple: #8b5cf6;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 12px;
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .date-bar {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    padding: 6px 0 14px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    margin-bottom: 10px;
+  }
+  .quote-card {
+    background: linear-gradient(135deg, #1a1d27, #1e1535);
+    border: 1px solid #3d2d7a;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .quote-text {
+    font-size: 16px;
+    font-style: italic;
+    color: #d4c8f0;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
   .quote-author { font-size: 12px; color: #9b8abf; }
-  .row { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+
+  /* Rows */
+  .row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
   .row:last-child { border-bottom: none; }
-  .dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
-  .dot-red { background: var(--red); } .dot-green { background: var(--green); } .dot-yellow { background: var(--yellow); } .dot-blue { background: var(--accent); } .dot-gray { background: #6b7280; }
-  .row-content { flex: 1; } .row-title { font-weight: 600; font-size: 14px; } .row-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
-  .tl-day { margin-bottom: 8px; } .tl-label { font-size: 12px; color: var(--muted); margin-bottom: 4px; font-weight: 600; }
-  .tl-slots { display: flex; gap: 3px; }
-  .tl-slot { flex: 1; height: 42px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #fff; text-align: center; line-height: 1.3; }
-  .slot-good { background: #16a34a; } .slot-marginal { background: #d97706; } .slot-poor { background: #dc2626; } .slot-past { background: #374151; color: #4b5563; } .slot-night { background: #1f2937; color: #374151; }
-  .slot-best { position: relative; } .slot-best::after { content: '★'; position: absolute; top: -11px; font-size: 9px; color: #fbbf24; }
-  .legend { font-size: 10px; color: var(--muted); margin-top: 5px; }
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .dot-red { background: var(--red); }
+  .dot-green { background: var(--green); }
+  .dot-yellow { background: var(--yellow); }
+  .dot-blue { background: var(--accent); }
+  .dot-gray { background: #6b7280; }
+  .dot-purple { background: var(--purple); }
+  .row-content { flex: 1; }
+  .row-title { font-weight: 600; font-size: 14px; }
+  .row-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .badge-red { background: #7f1d1d; color: #fca5a5; }
+  .badge-yellow { background: #451a03; color: #fcd34d; }
+  .badge-green { background: #052e16; color: #4ade80; }
+  .badge-blue { background: #1e3a5f; color: #93c5fd; }
+
+  /* Surf / Flight timeline */
+  .tl-day { margin-bottom: 12px; }
+  .tl-label { font-size: 12px; color: var(--muted); margin-bottom: 8px; font-weight: 600; }
+  .tl-slots { display: flex; gap: 3px; margin-top: 4px; }
+  .tl-slot {
+    flex: 1;
+    height: 44px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    text-align: center;
+    padding: 2px;
+    position: relative;
+  }
+  .slot-good { background: #16a34a; }
+  .slot-marginal { background: #d97706; }
+  .slot-poor { background: #dc2626; }
+  .slot-past { background: #374151; color: #4b5563; }
+  .slot-night { background: #1f2937; color: #374151; }
+  .slot-best::after {
+    content: '★';
+    position: absolute;
+    top: -13px;
+    font-size: 10px;
+    color: #fbbf24;
+  }
+  .legend {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 5px;
+  }
+
+  /* Tide */
   .tide-section { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); }
   .tide-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
-  .tide-day { margin-bottom: 10px; } .tide-day-lbl { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
-  .sun-row { display: flex; gap: 16px; font-size: 13px; margin-bottom: 4px; } .sun-row span { color: var(--muted); font-size: 11px; margin-left: 4px; }
-  .tide-events { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12px; } .tide-hi { color: var(--accent); font-weight: 600; } .tide-lo { color: var(--muted); }
+  .tide-day { margin-bottom: 10px; }
+  .tide-day-lbl { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
+  .sun-row { display: flex; gap: 16px; font-size: 13px; margin-bottom: 4px; }
+  .sun-row span { color: var(--muted); font-size: 11px; margin-left: 4px; }
+  .tide-events { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12px; color: var(--muted); }
+  .tide-hi { color: var(--accent); font-weight: 600; }
+  .tide-lo { color: var(--muted); }
+
+  /* Financial */
   .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
   .stat-cell { background: var(--bg); border-radius: 8px; padding: 10px; text-align: center; }
-  .stat-val { font-size: 18px; font-weight: 700; } .stat-lbl { font-size: 10px; color: var(--muted); margin-top: 2px; }
-  .pos { color: var(--green); } .warn { color: var(--yellow); }
-  .pipe-item { background: var(--bg); border-radius: 8px; padding: 10px 12px; margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
+  .stat-val { font-size: 18px; font-weight: 700; }
+  .stat-lbl { font-size: 10px; color: var(--muted); margin-top: 2px; }
+  .pos { color: var(--green); }
+  .neg { color: var(--red); }
+  .warn { color: var(--yellow); }
+
+  /* Pipeline */
+  .pipe-item {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
   .pipe-item:last-child { margin-bottom: 0; }
-  .stage-badge { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 5px; flex-shrink: 0; }
-  .s-quote { background: #3b2d0f; color: #fbbf24; } .s-lead { background: #1e3a5f; color: #60a5fa; }
-  .urgent-block { background: #450a0a; border: 1px solid #7f1d1d; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; }
+  .stage-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+  .s-quote { background: #3b2d0f; color: #fbbf24; }
+  .s-lead { background: #1e3a5f; color: #60a5fa; }
+  .s-follow { background: #1a2e1a; color: #4ade80; }
+
+  /* Urgent block */
+  .urgent-block {
+    background: #450a0a;
+    border: 1px solid #7f1d1d;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+  }
   .urgent-block:last-child { margin-bottom: 0; }
-  .urgent-title { font-weight: 700; font-size: 13px; color: #fca5a5; } .urgent-sub { font-size: 12px; color: #f87171; margin-top: 3px; }
-  .footer { text-align: center; font-size: 11px; color: #4b5563; padding: 16px 0 8px; }
+  .urgent-title { font-weight: 700; font-size: 13px; color: #fca5a5; }
+  .urgent-sub { font-size: 12px; color: #f87171; margin-top: 3px; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #4b5563;
+    padding: 16px 0 8px;
+  }
   .empty { color: var(--muted); font-size: 13px; font-style: italic; padding: 4px 0; }
+  .surf-note { font-size: 10px; color: var(--muted); margin-top: 6px; font-style: italic; }
 </style>
 </head>
 <body>
-<div class="date-bar">Wednesday &middot; April 29, 2026 &middot; Generated 6:00 AM ET</div>
+
+<div class="date-bar">Friday · May 1, 2026 · Generated 6:00 AM ET</div>
+
+<!-- QUOTE -->
 <div class="quote-card">
-  <div class="quote-text">"The best entrepreneurs don't wait for perfect conditions — they build systems so good they can surf whenever the waves show up."</div>
-  <div class="quote-author">— Built for builders who ride</div>
+  <div class="quote-text">"You can't stop the waves, but you can learn to surf."</div>
+  <div class="quote-author">— Jon Kabat-Zinn</div>
 </div>
+
+<!-- SURF -->
 <div class="card">
   <div class="card-title">🌊 Surf — 72hr · Jax Beach</div>
-  <div class="tl-day"><div class="tl-label">Today — Wed Apr 29</div><div class="tl-slots"><div class="tl-slot slot-past">Dawn<br>Past</div><div class="tl-slot slot-past">Morn<br>Past</div><div class="tl-slot slot-marginal">Aftn<br>1-2ft</div><div class="tl-slot slot-night">Eve</div></div></div>
-  <div class="tl-day"><div class="tl-label">Thu Apr 30</div><div class="tl-slots"><div class="tl-slot slot-marginal slot-best">Dawn<br>2-3ft</div><div class="tl-slot slot-marginal">Morn<br>2ft</div><div class="tl-slot slot-poor">Aftn<br>1ft</div><div class="tl-slot slot-night">Eve</div></div></div>
-  <div class="tl-day"><div class="tl-label">Fri May 1</div><div class="tl-slots"><div class="tl-slot slot-marginal">Dawn<br>2ft</div><div class="tl-slot slot-poor">Morn<br>1-2ft</div><div class="tl-slot slot-poor">Aftn<br>1ft</div><div class="tl-slot slot-night">Eve</div></div></div>
-  <div class="legend">🟢 Good &nbsp;·&nbsp; 🟡 Marginal &nbsp;·&nbsp; 🔴 Poor &nbsp;·&nbsp; ★ Best &nbsp;·&nbsp; ⚠️ Live API unavailable — seasonal estimate</div>
+
+  <div class="tl-day">
+    <div class="tl-label">Today — Fri May 1</div>
+    <div class="tl-slots">
+      <div class="tl-slot slot-marginal slot-best">Dawn<br>1-2ft<br>N9mph</div>
+      <div class="tl-slot slot-marginal">Morn<br>1-2ft<br>N10mph</div>
+      <div class="tl-slot slot-poor">Aftn<br>⛈ Storm<br>NE12</div>
+      <div class="tl-slot slot-poor">Eve<br>⛈ Storm<br>NE</div>
+    </div>
+  </div>
+
+  <div class="tl-day">
+    <div class="tl-label">Sat May 2</div>
+    <div class="tl-slots">
+      <div class="tl-slot slot-poor">Dawn<br>Rain<br>SW8</div>
+      <div class="tl-slot slot-poor">Morn<br>Rain<br>S12</div>
+      <div class="tl-slot slot-poor">Aftn<br>⛈ Storm<br>SW20</div>
+      <div class="tl-slot slot-poor">Eve<br>⛈ Storm<br>W15</div>
+    </div>
+  </div>
+
+  <div class="tl-day">
+    <div class="tl-label">Sun May 3</div>
+    <div class="tl-slots">
+      <div class="tl-slot slot-poor">Dawn<br>Rain<br>N20</div>
+      <div class="tl-slot slot-marginal">Morn<br>Post-front<br>N20</div>
+      <div class="tl-slot slot-marginal">Aftn<br>2-3ft?<br>NE17</div>
+      <div class="tl-slot slot-marginal">Eve<br>E swell<br>NE15</div>
+    </div>
+  </div>
+
+  <div class="legend">🟢 Good (2-6ft offshore) &nbsp;·&nbsp; 🟡 Marginal &nbsp;·&nbsp; 🔴 Poor/Dangerous &nbsp;·&nbsp; ★ Best window</div>
+  <div class="surf-note">Heights estimated from NWS wind/swell data · Surfline API not accessible from sandbox</div>
 </div>
+
+<!-- FLIGHT -->
 <div class="card">
-  <div class="card-title">✈️ J-3 Cub — 72hr · KCRG</div>
-  <div class="empty">✈️ Season opens May 15, 2026 — 16 days to go. Get her ready.</div>
-  <div class="legend">🟢 VFR Good &nbsp;·&nbsp; 🟡 Marginal &nbsp;·&nbsp; 🔴 IFR/Poor</div>
+  <div class="card-title">✈️ J-3 Cub — 72hr · KCRG · Season ACTIVE ✅</div>
+
+  <div class="tl-day">
+    <div class="tl-label">Today — Fri May 1 · Current: CLR 12,500ft · 10mi vis · N6mph 🟢</div>
+    <div class="tl-slots">
+      <div class="tl-slot slot-marginal">Dawn<br>N9<br>☁️ Cloudy</div>
+      <div class="tl-slot slot-marginal slot-best">Morn<br>N10<br>⛅ Partly</div>
+      <div class="tl-slot slot-poor">Aftn<br>NE12<br>⛈ Storms</div>
+      <div class="tl-slot slot-poor">Eve<br>NE13<br>⛈ Storms</div>
+    </div>
+  </div>
+
+  <div class="tl-day">
+    <div class="tl-label">Sat May 2 · All-day storm system</div>
+    <div class="tl-slots">
+      <div class="tl-slot slot-marginal">Dawn<br>SW8<br>☁️ Cloudy</div>
+      <div class="tl-slot slot-poor">Morn<br>S12<br>🌧 Rain</div>
+      <div class="tl-slot slot-poor">Aftn<br>SW20<br>⛈ Storms</div>
+      <div class="tl-slot slot-poor">Eve<br>W15<br>⛈ Storms</div>
+    </div>
+  </div>
+
+  <div class="tl-day">
+    <div class="tl-label">Sun May 3 · Post-frontal clearing</div>
+    <div class="tl-slots">
+      <div class="tl-slot slot-poor">Dawn<br>N20<br>🌧 Rain</div>
+      <div class="tl-slot slot-marginal">Morn<br>N20<br>☀️ Sunny</div>
+      <div class="tl-slot slot-marginal">Aftn<br>NE17<br>☀️ Sunny</div>
+      <div class="tl-slot slot-marginal">Eve<br>NE15<br>☀️ Sunny</div>
+    </div>
+  </div>
+
+  <div class="legend">🟢 VFR Good (ceiling >3000ft, vis >5mi) &nbsp;·&nbsp; 🟡 Marginal &nbsp;·&nbsp; 🔴 IFR/Storms · ★ Best window<br>⚠️ Today: Fly morning only — T-storms develop by noon · Sunday improving but gusty 20mph</div>
+
+  <!-- TIDES -->
   <div class="tide-section">
-    <div class="tide-title">🌊 Tides &amp; ☀️ Sun — 3 Days</div>
-    <div class="tide-day"><div class="tide-day-lbl">Wed Apr 29</div><div class="sun-row">🌅 6:44a <span>sunrise</span> &nbsp; 🌇 7:58p <span>sunset</span></div><div class="tide-events"><span class="tide-lo">↓ Low 0.1ft @ 1:31a</span><span class="tide-hi">↑ High 4.5ft @ 7:51a</span><span class="tide-lo">↓ Low 0.0ft @ 1:37p</span><span class="tide-hi">↑ High 5.1ft @ 8:21p</span></div></div>
-    <div class="tide-day"><div class="tide-day-lbl">Thu Apr 30</div><div class="sun-row">🌅 6:43a <span>sunrise</span> &nbsp; 🌇 7:59p <span>sunset</span></div><div class="tide-events"><span class="tide-lo">↓ Low 0.1ft @ 2:17a</span><span class="tide-hi">↑ High 4.4ft @ 8:33a</span><span class="tide-lo">↓ Low 0.0ft @ 2:16p</span><span class="tide-hi">↑ High 5.1ft @ 9:01p</span></div></div>
-    <div class="tide-day"><div class="tide-day-lbl">Fri May 1</div><div class="sun-row">🌅 6:42a <span>sunrise</span> &nbsp; 🌇 8:00p <span>sunset</span></div><div class="tide-events"><span class="tide-lo">↓ Low 0.1ft @ 2:59a</span><span class="tide-hi">↑ High 4.3ft @ 9:12a</span><span class="tide-lo">↓ Low 0.1ft @ 2:53p</span><span class="tide-hi">↑ High 5.1ft @ 9:39p</span></div></div>
+    <div class="tide-title">🌊 Tides &amp; ☀️ Golden Hour · Station 8720218</div>
+
+    <div class="tide-day">
+      <div class="tide-day-lbl">Fri May 1</div>
+      <div class="sun-row">🌅 6:44a <span>sunrise</span> &nbsp; 🌇 8:01p <span>sunset</span></div>
+      <div class="tide-events">
+        <span class="tide-lo">↓ Low 0.1ft @ 2:59a</span>
+        <span class="tide-hi">↑ High 4.3ft @ 9:12a</span>
+        <span class="tide-lo">↓ Low 0.1ft @ 2:53p</span>
+        <span class="tide-hi">↑ High 5.1ft @ 9:39p</span>
+      </div>
+    </div>
+
+    <div class="tide-day">
+      <div class="tide-day-lbl">Sat May 2</div>
+      <div class="sun-row">🌅 6:43a <span>sunrise</span> &nbsp; 🌇 8:02p <span>sunset</span></div>
+      <div class="tide-events">
+        <span class="tide-lo">↓ Low 0.1ft @ 3:39a</span>
+        <span class="tide-hi">↑ High 4.2ft @ 9:51a</span>
+        <span class="tide-lo">↓ Low 0.1ft @ 3:27p</span>
+        <span class="tide-hi">↑ High 5.0ft @ 10:15p</span>
+      </div>
+    </div>
+
+    <div class="tide-day">
+      <div class="tide-day-lbl">Sun May 3</div>
+      <div class="sun-row">🌅 6:42a <span>sunrise</span> &nbsp; 🌇 8:03p <span>sunset</span></div>
+      <div class="tide-events">
+        <span class="tide-lo">↓ Low 0.2ft @ 4:18a</span>
+        <span class="tide-hi">↑ High 4.0ft @ 10:28a</span>
+        <span class="tide-lo">↓ Low 0.3ft @ 4:00p</span>
+        <span class="tide-hi">↑ High 4.9ft @ 10:51p</span>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- URGENT TASKS -->
 <div class="card">
   <div class="card-title">🚨 Urgent — Do Today</div>
-  <div class="urgent-block"><div class="urgent-title">✍️ Elliana's FSCJ Parent E-Signature</div><div class="urgent-sub">Email from welcome@fscj.edu — Apr 22 (7 days overdue). She can't enroll without your signature.</div></div>
-  <div class="urgent-block"><div class="urgent-title">💳 Chase Ink Business Premier — Due May 3</div><div class="urgent-sub">NOT on auto-pay. 4 days away. Pay manually before the weekend to avoid late fees.</div></div>
-  <div class="urgent-block"><div class="urgent-title">🍽️ Kaia's School Lunch — FINAL NOTICE ($8.75)</div><div class="urgent-sub">Fletcher HS balance critically low. Top up + set auto-refill today.</div></div>
+
+  <div class="urgent-block">
+    <div class="urgent-title">🎓 Kaia — Cap &amp; Gown Order Deadline TODAY</div>
+    <div class="urgent-sub">Fletcher HS seniors must order cap &amp; gown online by end of day May 1 via Herff Jones. Mandatory graduation info meeting also coming up. From: ledfordj@duvalschools.org</div>
+  </div>
+
+  <div class="urgent-block">
+    <div class="urgent-title">💳 Chase Ink Business Premier — Due May 3 (2 days!)</div>
+    <div class="urgent-sub">NOT on auto-pay — manual payment required. Don't miss this one.</div>
+  </div>
+
+  <div class="urgent-block">
+    <div class="urgent-title">✍️ Elliana — FSCJ Parent E-Signature Needed</div>
+    <div class="urgent-sub">Parent electronic signature required for dual enrollment application. Email from welcome@fscj.edu, Apr 22. Still outstanding.</div>
+  </div>
+
+  <div class="urgent-block">
+    <div class="urgent-title">🍽️ Kaia — School Lunch Account Final Notice ($8.75)</div>
+    <div class="urgent-sub">Fletcher HS account at $8.75 — FINAL NOTICE. Top up + set up auto-refill.</div>
+  </div>
 </div>
+
+<!-- TODAY'S CALENDAR -->
 <div class="card">
-  <div class="card-title">📅 Today's Schedule</div>
-  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">EL Test!!</div><div class="row-sub">All day · Elliana's exam — check in with her, she's got this 💪</div></div></div>
+  <div class="card-title">📅 Today's Schedule — Friday May 1</div>
+
+  <div class="row">
+    <div class="dot dot-purple"></div>
+    <div class="row-content">
+      <div class="row-title">📝 EL TEST!! (All Day)</div>
+      <div class="row-sub">Elliana has a test today — check in with her this evening</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-yellow"></div>
+    <div class="row-content">
+      <div class="row-title">🎓 Kaia Cap &amp; Gown Order Deadline (Today!)</div>
+      <div class="row-sub">Herff Jones online order closes May 1 — take action before end of day</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-green"></div>
+    <div class="row-content">
+      <div class="row-title">🌊 Surf Window: Dawn–Morning (best before 11am)</div>
+      <div class="row-sub">N 9-10mph, 1-2ft, cross-shore · T-storms develop by early afternoon — get out early</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-blue"></div>
+    <div class="row-content">
+      <div class="row-title">✈️ J-3 Cub Window: Morning only</div>
+      <div class="row-sub">Currently CLR 12,500ft · 10mi vis · N6mph 🟢 — excellent right now. Fly before noon, storms arrive afternoon</div>
+    </div>
+  </div>
 </div>
+
+<!-- CUSTOMER ALERTS -->
 <div class="card">
   <div class="card-title">🏊 Customer &amp; Business Alerts</div>
-  <div class="empty">No Skimmer alerts in last 48 hours — all pools nominal ✅</div>
-  <div class="row" style="border-top:1px solid var(--border);margin-top:10px;padding-top:8px;"><div class="dot dot-yellow"></div><div class="row-content"><div class="row-title">Coastal Club HOA — Quote Follow-Up</div><div class="row-sub">$4,500 quote sent Apr 20 — 9 days, no reply. Worth a nudge this week.</div></div></div>
-  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Trident Business Inbox — Clear</div><div class="row-sub">No new emails to hello@tridentpoolcojax.com in last 48 hours</div></div></div>
+  <div class="empty">No Skimmer alerts in the last 48 hours — all pools nominal ✅</div>
+  <div style="margin-top: 8px;">
+    <div class="row">
+      <div class="dot dot-yellow"></div>
+      <div class="row-content">
+        <div class="row-title">Coastal Club HOA — Quote Follow-Up Due</div>
+        <div class="row-sub">$4,500 quote sent Apr 20 · 11 days old · No response yet — consider following up today</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="dot dot-blue"></div>
+      <div class="row-content">
+        <div class="row-title">Ponte Vedra Beach Resort — Maytronics Lead</div>
+        <div class="row-sub">$8,500 inquiry Apr 23 · 8 days old · Nurture this one — big ticket</div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- BILLS -->
 <div class="card">
   <div class="card-title">💳 Bills &amp; Money</div>
-  <div class="row"><div class="dot dot-red"></div><div class="row-content"><div class="row-title">Chase Ink Business Premier</div><div class="row-sub">Due May 3 · NOT on auto-pay → pay this week</div></div></div>
-  <div class="row"><div class="dot dot-yellow"></div><div class="row-content"><div class="row-title">GEICO + USAA — Possible Double Coverage</div><div class="row-sub">Verify no overlap — cancel duplicate to stop wasting money</div></div></div>
-  <div class="row"><div class="dot dot-green"></div><div class="row-content"><div class="row-title">Skimmer · Comcast Business · Google Workspace</div><div class="row-sub">All auto-pay · no action needed ✅</div></div></div>
-  <div class="row"><div class="dot dot-gray"></div><div class="row-content"><div class="row-title">eBay Purchases — $278.21 via Venmo (Apr 27)</div><div class="row-sub">$245.98 + $32.23 · Also 3 Etsy orders shipped Apr 28</div></div></div>
+
+  <div class="row">
+    <div class="dot dot-red"></div>
+    <div class="row-content">
+      <div class="row-title">Chase Ink Business Premier <span class="badge badge-red">DUE MAY 3</span></div>
+      <div class="row-sub">NOT on auto-pay — 2 days away. Pay now to avoid late fee.</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-yellow"></div>
+    <div class="row-content">
+      <div class="row-title">GEICO + USAA — Potential Double Coverage</div>
+      <div class="row-sub">Both appear active — verify and cancel duplicate to save money</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-green"></div>
+    <div class="row-content">
+      <div class="row-title">Skimmer · Comcast Business · Google Workspace</div>
+      <div class="row-sub">Auto-pay active — all OK ✅</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-blue"></div>
+    <div class="row-content">
+      <div class="row-title">FAA Registry — Aircraft Registration Payment Received</div>
+      <div class="row-sub">$5.00 payment confirmed · Confirmation #281TFMK9 · J-3 Cub registration processing</div>
+    </div>
+  </div>
 </div>
+
+<!-- FINANCIAL SNAPSHOT -->
 <div class="card">
-  <div class="card-title">📊 Trident Snapshot — YTD 2026 (Jan–Apr)</div>
-  <div class="stat-row"><div class="stat-cell"><div class="stat-val pos">$80,372</div><div class="stat-lbl">Revenue</div></div><div class="stat-cell"><div class="stat-val warn">$48,790</div><div class="stat-lbl">Expenses</div></div><div class="stat-cell"><div class="stat-val pos">$27,781</div><div class="stat-lbl">Net · 34.6%</div></div></div>
-  <div class="pipe-item"><span class="stage-badge s-quote">QUOTE</span><div><strong>Coastal Club HOA</strong><br><small style="color:var(--muted)">$4,500 · Sent Apr 20 · Follow up now (9 days)</small></div></div>
-  <div class="pipe-item"><span class="stage-badge s-lead">LEAD</span><div><strong>Ponte Vedra Beach Resort</strong><br><small style="color:var(--muted)">$8,500 Maytronics inquiry · Apr 23 · Nurture this week</small></div></div>
+  <div class="card-title">📊 Trident Snapshot — YTD Jan–Apr 2026</div>
+  <div class="stat-row">
+    <div class="stat-cell"><div class="stat-val pos">$80,372</div><div class="stat-lbl">Revenue</div></div>
+    <div class="stat-cell"><div class="stat-val warn">$48,790</div><div class="stat-lbl">Expenses</div></div>
+    <div class="stat-cell"><div class="stat-val pos">$27,781</div><div class="stat-lbl">Net · 34.6%</div></div>
+  </div>
+
+  <div class="pipe-item">
+    <span class="stage-badge s-quote">QUOTE</span>
+    <div><strong>Coastal Club HOA</strong><br><small style="color:var(--muted)">$4,500 · Sent Apr 20 · Follow up needed</small></div>
+  </div>
+  <div class="pipe-item">
+    <span class="stage-badge s-lead">LEAD</span>
+    <div><strong>Ponte Vedra Beach Resort</strong><br><small style="color:var(--muted)">$8,500 Maytronics inquiry · Apr 23 · Nurture</small></div>
+  </div>
 </div>
+
+<!-- KIDS -->
 <div class="card">
   <div class="card-title">👧 Kids Command Center</div>
-  <div class="row"><div class="dot dot-red"></div><div class="row-content"><div class="row-title">Elliana — FSCJ E-Signature URGENT</div><div class="row-sub">welcome@fscj.edu · Apr 22 · 7 days outstanding · She's waiting on you</div></div></div>
-  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Elliana — EL Test!! Today</div><div class="row-sub">Exam day on calendar · Check in with her 💪</div></div></div>
-  <div class="row"><div class="dot dot-yellow"></div><div class="row-content"><div class="row-title">Elliana — SAT + Scholarship + 529</div><div class="row-sub">Verify SAT spring date booked · Check BigFuture/College Board · Review Vanguard 529</div></div></div>
-  <div class="row"><div class="dot dot-green"></div><div class="row-content"><div class="row-title">Kaia — FSCJ TDE Application Submitted ✅</div><div class="row-sub">Counselor Alyssa Greenert filed app Apr 28 · Awaiting district confirmation</div></div></div>
-  <div class="row"><div class="dot dot-red"></div><div class="row-content"><div class="row-title">Kaia — School Lunch FINAL NOTICE</div><div class="row-sub">$8.75 balance at Fletcher HS · Top up + set auto-refill today</div></div></div>
+
+  <div class="row">
+    <div class="dot dot-yellow"></div>
+    <div class="row-content">
+      <div class="row-title">Kaia — Cap &amp; Gown <span class="badge badge-red">TODAY</span></div>
+      <div class="row-sub">Order online via Herff Jones before end of day May 1. Mandatory graduation meeting details in the email from ledfordj@duvalschools.org</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-green"></div>
+    <div class="row-content">
+      <div class="row-title">Kaia — FSCJ TDE Application ✅ RESOLVED</div>
+      <div class="row-sub">Application submitted by Ms. Dunkley (school counselor). You approved the 2 available classes. Math class to be added in July if it opens. All good!</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-yellow"></div>
+    <div class="row-content">
+      <div class="row-title">Kaia — Lunch Account <span class="badge badge-red">FINAL NOTICE</span></div>
+      <div class="row-sub">$8.75 balance · Top up + set auto-refill so this never happens again</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-red"></div>
+    <div class="row-content">
+      <div class="row-title">Elliana — FSCJ Parent E-Signature</div>
+      <div class="row-sub">Dual enrollment application needs parent e-sig · Email from welcome@fscj.edu Apr 22 · Still outstanding</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-purple"></div>
+    <div class="row-content">
+      <div class="row-title">Elliana — Test Today 📝</div>
+      <div class="row-sub">"EL TEST!!" on calendar · Check in with her this evening</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-gray"></div>
+    <div class="row-content">
+      <div class="row-title">Elliana — SAT · BigFuture · Vanguard 529</div>
+      <div class="row-sub">Verify SAT spring date booked · Check BigFuture scholarship status · Review 529 quarterly balance</div>
+    </div>
+  </div>
 </div>
+
+<!-- EMAIL HIGHLIGHTS -->
 <div class="card">
   <div class="card-title">📬 Email Highlights</div>
-  <div class="row"><div class="dot dot-red"></div><div class="row-content"><div class="row-title">FSCJ: Elliana Parent E-Signature Needed</div><div class="row-sub">welcome@fscj.edu · Apr 22 · 7 days outstanding · Electronic approval for dual enrollment</div></div></div>
-  <div class="row"><div class="dot dot-green"></div><div class="row-content"><div class="row-title">Kaia FSCJ TDE App Submitted by Counselor ✅</div><div class="row-sub">Alyssa Greenert (Fletcher HS) filed Kaia's dual enrollment app Apr 28</div></div></div>
-  <div class="row"><div class="dot dot-yellow"></div><div class="row-content"><div class="row-title">eBay Purchases — $278.21 via Venmo (Apr 27)</div><div class="row-sub">Two transactions: $245.98 + $32.23 · Personal spend to note</div></div></div>
-  <div class="row"><div class="dot dot-gray"></div><div class="row-content"><div class="row-title">3 Etsy Orders Shipped (Apr 28)</div><div class="row-sub">Receipts #4040570244, #4046187047, #4046196221 · Packages on the way</div></div></div>
-  <div class="row"><div class="dot dot-gray"></div><div class="row-content"><div class="row-title">Duval Schools: Bus Camera Penalties Start May 1</div><div class="row-sub">Civil fines begin Thursday for passing stopped school buses · FYI for school runs</div></div></div>
+
+  <div class="row">
+    <div class="dot dot-red"></div>
+    <div class="row-content">
+      <div class="row-title">🎓 Fletcher HS: Cap &amp; Gown ORDER DEADLINE TODAY</div>
+      <div class="row-sub">From ledfordj@duvalschools.org · Must order Herff Jones cap &amp; gown online by May 1. Also: mandatory senior meeting coming up.</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-green"></div>
+    <div class="row-content">
+      <div class="row-title">✅ Kaia FSCJ TDE Application — Submitted &amp; Confirmed</div>
+      <div class="row-sub">School counselors Greenert &amp; Dunkley confirmed submission. Paul approved 2 classes. Math class pending July opening.</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-blue"></div>
+    <div class="row-content">
+      <div class="row-title">✈️ FAA Aircraft Registration Payment — $5.00 Received</div>
+      <div class="row-sub">From caresfaa@faa.gov · Confirmation #281TFMK9 · J-3 Cub registration is processing</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-gray"></div>
+    <div class="row-content">
+      <div class="row-title">Fletcher HS: 4th Quarter Progress Reports Available</div>
+      <div class="row-sub">From ledfordj@duvalschools.org · Check FOCUS portal for Kaia's progress report</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-gray"></div>
+    <div class="row-content">
+      <div class="row-title">Etsy Orders: 3 packages shipped (Apr 28)</div>
+      <div class="row-sub">Receipts #4040570244, #4046187047, #4046196221 · All in transit</div>
+    </div>
+  </div>
 </div>
+
+<!-- CLAUDE CAN HANDLE -->
 <div class="card">
   <div class="card-title">🤖 Claude Can Handle This</div>
-  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Draft Coastal Club HOA Follow-Up Email</div><div class="row-sub">9 days since $4,500 quote — I can write a friendly, professional nudge</div></div></div>
-  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Research + Draft Ponte Vedra Beach Resort Outreach</div><div class="row-sub">$8,500 Maytronics lead from Apr 23 — I can find the contact and write the pitch</div></div></div>
-  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Walk Through Kaia Lunch Account Auto-Refill Setup</div><div class="row-sub">MySchoolBucks or school portal — I can guide you step by step</div></div></div>
+
+  <div class="row">
+    <div class="dot dot-green"></div>
+    <div class="row-content">
+      <div class="row-title">Set up Kaia's lunch account auto-refill</div>
+      <div class="row-sub">Tell me to "set up Kaia's lunch auto-refill" and I'll draft the steps or find the portal</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-green"></div>
+    <div class="row-content">
+      <div class="row-title">Draft Coastal Club HOA follow-up email</div>
+      <div class="row-sub">Quote is 11 days old — I can write a warm follow-up to hello@tridentpoolcojax.com</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-green"></div>
+    <div class="row-content">
+      <div class="row-title">Research GEICO vs USAA overlap</div>
+      <div class="row-sub">I can pull both policy emails and compare coverage to identify the duplicate</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dot dot-green"></div>
+    <div class="row-content">
+      <div class="row-title">Trident customer work scheduling</div>
+      <div class="row-sub">6 customers in the queue (G2C, heater, pump, salt cells) — I can draft a schedule for the week</div>
+    </div>
+  </div>
 </div>
-<div class="footer">Paul's Daily Brief · Trident Pool Co · pechase@gmail.com<br><a href="https://pechase1222.github.io/daily-brief/" style="color:#4b5563">Refresh</a> · Auto-generated by Claude at 6:00 AM ET</div>
+
+<div class="footer">
+  Paul's Daily Brief · Trident Pool Co · pechase@gmail.com<br>
+  Auto-generated by Claude at 6:00 AM ET · May 1, 2026
+</div>
+
 </body>
 </html>
