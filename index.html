@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Paul's Brief · 2026-05-01</title>
+<title>Paul's Brief · 2026-05-02</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -109,35 +109,33 @@
   .badge-blue { background: #1e3a5f; color: #93c5fd; }
 
   /* Surf / Flight timeline */
-  .tl-day { margin-bottom: 12px; }
-  .tl-label { font-size: 12px; color: var(--muted); margin-bottom: 8px; font-weight: 600; }
-  .tl-slots { display: flex; gap: 3px; margin-top: 4px; }
+  .tl-day { margin-bottom: 8px; }
+  .tl-label { font-size: 12px; color: var(--muted); margin-bottom: 4px; font-weight: 600; }
+  .tl-slots { display: flex; gap: 3px; }
   .tl-slot {
     flex: 1;
-    height: 44px;
+    height: 38px;
     border-radius: 5px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
     color: #fff;
-    line-height: 1.3;
     text-align: center;
-    padding: 2px;
-    position: relative;
+    line-height: 1.2;
   }
   .slot-good { background: #16a34a; }
   .slot-marginal { background: #d97706; }
   .slot-poor { background: #dc2626; }
   .slot-past { background: #374151; color: #4b5563; }
   .slot-night { background: #1f2937; color: #374151; }
+  .slot-best { position: relative; }
   .slot-best::after {
     content: '★';
     position: absolute;
-    top: -13px;
-    font-size: 10px;
+    top: -11px;
+    font-size: 9px;
     color: #fbbf24;
   }
   .legend {
@@ -208,17 +206,16 @@
     padding: 16px 0 8px;
   }
   .empty { color: var(--muted); font-size: 13px; font-style: italic; padding: 4px 0; }
-  .surf-note { font-size: 10px; color: var(--muted); margin-top: 6px; font-style: italic; }
 </style>
 </head>
 <body>
 
-<div class="date-bar">Friday · May 1, 2026 · Generated 6:00 AM ET</div>
+<div class="date-bar">Saturday · May 2, 2026 · Generated 6:00 AM ET</div>
 
 <!-- QUOTE -->
 <div class="quote-card">
-  <div class="quote-text">"You can't stop the waves, but you can learn to surf."</div>
-  <div class="quote-author">— Jon Kabat-Zinn</div>
+  <div class="quote-text">"The best surfers in the world are the ones having the most fun — build a business the same way."</div>
+  <div class="quote-author">— Adapted from Phil Edwards</div>
 </div>
 
 <!-- SURF -->
@@ -226,37 +223,36 @@
   <div class="card-title">🌊 Surf — 72hr · Jax Beach</div>
 
   <div class="tl-day">
-    <div class="tl-label">Today — Fri May 1</div>
+    <div class="tl-label">Today — Sat May 2 · 🌅 6:39a · 🌇 8:05p</div>
     <div class="tl-slots">
-      <div class="tl-slot slot-marginal slot-best">Dawn<br>1-2ft<br>N9mph</div>
-      <div class="tl-slot slot-marginal">Morn<br>1-2ft<br>N10mph</div>
-      <div class="tl-slot slot-poor">Aftn<br>⛈ Storm<br>NE12</div>
-      <div class="tl-slot slot-poor">Eve<br>⛈ Storm<br>NE</div>
+      <div class="tl-slot slot-marginal">Dawn<br>1.5ft<br>NE 5</div>
+      <div class="tl-slot slot-poor">Morn<br>1.5ft<br>SE 7</div>
+      <div class="tl-slot slot-poor">Aftn<br>2ft<br>⛈ SW</div>
+      <div class="tl-slot slot-poor">Eve<br>2.5ft<br>⛈ W</div>
     </div>
   </div>
 
   <div class="tl-day">
-    <div class="tl-label">Sat May 2</div>
+    <div class="tl-label">Sun May 3 — Post-frontal · 🌅 6:38a · 🌇 8:06p</div>
     <div class="tl-slots">
-      <div class="tl-slot slot-poor">Dawn<br>Rain<br>SW8</div>
-      <div class="tl-slot slot-poor">Morn<br>Rain<br>S12</div>
-      <div class="tl-slot slot-poor">Aftn<br>⛈ Storm<br>SW20</div>
-      <div class="tl-slot slot-poor">Eve<br>⛈ Storm<br>W15</div>
+      <div class="tl-slot slot-marginal slot-best">Dawn<br>2.5ft<br>N 9</div>
+      <div class="tl-slot slot-marginal">Morn<br>2.5ft<br>N 8</div>
+      <div class="tl-slot slot-marginal">Aftn<br>2.3ft<br>NE 10</div>
+      <div class="tl-slot slot-marginal">Eve<br>2.3ft<br>E 10</div>
     </div>
   </div>
 
   <div class="tl-day">
-    <div class="tl-label">Sun May 3</div>
+    <div class="tl-label">Mon May 4 — Light wind · 🌅 6:38a · 🌇 8:06p</div>
     <div class="tl-slots">
-      <div class="tl-slot slot-poor">Dawn<br>Rain<br>N20</div>
-      <div class="tl-slot slot-marginal">Morn<br>Post-front<br>N20</div>
-      <div class="tl-slot slot-marginal">Aftn<br>2-3ft?<br>NE17</div>
-      <div class="tl-slot slot-marginal">Eve<br>E swell<br>NE15</div>
+      <div class="tl-slot slot-marginal">Dawn<br>2ft<br>NE 2</div>
+      <div class="tl-slot slot-marginal">Morn<br>2ft<br>N 3</div>
+      <div class="tl-slot slot-marginal">Aftn<br>2ft<br>NE 6</div>
+      <div class="tl-slot slot-marginal">Eve<br>2ft<br>E 8</div>
     </div>
   </div>
 
-  <div class="legend">🟢 Good (2-6ft offshore) &nbsp;·&nbsp; 🟡 Marginal &nbsp;·&nbsp; 🔴 Poor/Dangerous &nbsp;·&nbsp; ★ Best window</div>
-  <div class="surf-note">Heights estimated from NWS wind/swell data · Surfline API not accessible from sandbox</div>
+  <div class="legend">🟢 Good (2–6ft, offshore) &nbsp;·&nbsp; 🟡 Marginal &nbsp;·&nbsp; 🔴 Poor/Storm &nbsp;·&nbsp; ★ Best window · Wave heights offshore (m→ft)</div>
 </div>
 
 <!-- FLIGHT -->
@@ -264,55 +260,44 @@
   <div class="card-title">✈️ J-3 Cub — 72hr · KCRG · Season ACTIVE ✅</div>
 
   <div class="tl-day">
-    <div class="tl-label">Today — Fri May 1 · Current: CLR 12,500ft · 10mi vis · N6mph 🟢</div>
+    <div class="tl-label">Today — Sat May 2 · Now: Marginal (ceiling 2,300ft BKN)</div>
     <div class="tl-slots">
-      <div class="tl-slot slot-marginal">Dawn<br>N9<br>☁️ Cloudy</div>
-      <div class="tl-slot slot-marginal slot-best">Morn<br>N10<br>⛅ Partly</div>
-      <div class="tl-slot slot-poor">Aftn<br>NE12<br>⛈ Storms</div>
-      <div class="tl-slot slot-poor">Eve<br>NE13<br>⛈ Storms</div>
+      <div class="tl-slot slot-marginal">Dawn<br>Cloudy<br>NE 5</div>
+      <div class="tl-slot slot-marginal">Morn<br>Cloudy<br>SE 7</div>
+      <div class="tl-slot slot-poor">Aftn<br>⛈ T-storm<br>SW 13</div>
+      <div class="tl-slot slot-poor">Eve<br>⛈ T-storm<br>NW 15</div>
     </div>
   </div>
 
   <div class="tl-day">
-    <div class="tl-label">Sat May 2 · All-day storm system</div>
+    <div class="tl-label">Sun May 3 — Clearing beautifully ☀️</div>
     <div class="tl-slots">
-      <div class="tl-slot slot-marginal">Dawn<br>SW8<br>☁️ Cloudy</div>
-      <div class="tl-slot slot-poor">Morn<br>S12<br>🌧 Rain</div>
-      <div class="tl-slot slot-poor">Aftn<br>SW20<br>⛈ Storms</div>
-      <div class="tl-slot slot-poor">Eve<br>W15<br>⛈ Storms</div>
+      <div class="tl-slot slot-marginal">Dawn<br>Prtly Cld<br>N 9</div>
+      <div class="tl-slot slot-good">✨Morn<br>Sunny<br>N 8</div>
+      <div class="tl-slot slot-good">✨Aftn<br>Sunny<br>NE 10</div>
+      <div class="tl-slot slot-good">✨Eve<br>Clear<br>E 9</div>
     </div>
   </div>
 
   <div class="tl-day">
-    <div class="tl-label">Sun May 3 · Post-frontal clearing</div>
+    <div class="tl-label">Mon May 4 — Near-perfect VFR ★</div>
     <div class="tl-slots">
-      <div class="tl-slot slot-poor">Dawn<br>N20<br>🌧 Rain</div>
-      <div class="tl-slot slot-marginal">Morn<br>N20<br>☀️ Sunny</div>
-      <div class="tl-slot slot-marginal">Aftn<br>NE17<br>☀️ Sunny</div>
-      <div class="tl-slot slot-marginal">Eve<br>NE15<br>☀️ Sunny</div>
+      <div class="tl-slot slot-good">✨Dawn<br>Clear<br>NE 2</div>
+      <div class="tl-slot slot-good slot-best">✨Morn<br>Sunny<br>N 2</div>
+      <div class="tl-slot slot-good">✨Aftn<br>Sunny<br>NE 6</div>
+      <div class="tl-slot slot-good">✨Eve<br>Clear<br>E 8</div>
     </div>
   </div>
 
-  <div class="legend">🟢 VFR Good (ceiling >3000ft, vis >5mi) &nbsp;·&nbsp; 🟡 Marginal &nbsp;·&nbsp; 🔴 IFR/Storms · ★ Best window<br>⚠️ Today: Fly morning only — T-storms develop by noon · Sunday improving but gusty 20mph</div>
+  <div class="legend">🟢 VFR Good (ceiling >3,000ft, vis >5sm) &nbsp;·&nbsp; 🟡 Marginal &nbsp;·&nbsp; 🔴 IFR/Poor &nbsp;·&nbsp; ✨ Golden hour flagged &nbsp;·&nbsp; ★ Best window</div>
 
   <!-- TIDES -->
   <div class="tide-section">
-    <div class="tide-title">🌊 Tides &amp; ☀️ Golden Hour · Station 8720218</div>
-
-    <div class="tide-day">
-      <div class="tide-day-lbl">Fri May 1</div>
-      <div class="sun-row">🌅 6:44a <span>sunrise</span> &nbsp; 🌇 8:01p <span>sunset</span></div>
-      <div class="tide-events">
-        <span class="tide-lo">↓ Low 0.1ft @ 2:59a</span>
-        <span class="tide-hi">↑ High 4.3ft @ 9:12a</span>
-        <span class="tide-lo">↓ Low 0.1ft @ 2:53p</span>
-        <span class="tide-hi">↑ High 5.1ft @ 9:39p</span>
-      </div>
-    </div>
+    <div class="tide-title">🌊 Tides &amp; ☀️ Sun — Jacksonville Beach (NOAA 8720218)</div>
 
     <div class="tide-day">
       <div class="tide-day-lbl">Sat May 2</div>
-      <div class="sun-row">🌅 6:43a <span>sunrise</span> &nbsp; 🌇 8:02p <span>sunset</span></div>
+      <div class="sun-row">🌅 6:39a <span>sunrise</span> &nbsp; 🌇 8:05p <span>sunset</span></div>
       <div class="tide-events">
         <span class="tide-lo">↓ Low 0.1ft @ 3:39a</span>
         <span class="tide-hi">↑ High 4.2ft @ 9:51a</span>
@@ -323,12 +308,23 @@
 
     <div class="tide-day">
       <div class="tide-day-lbl">Sun May 3</div>
-      <div class="sun-row">🌅 6:42a <span>sunrise</span> &nbsp; 🌇 8:03p <span>sunset</span></div>
+      <div class="sun-row">🌅 6:38a <span>sunrise</span> &nbsp; 🌇 8:06p <span>sunset</span></div>
       <div class="tide-events">
         <span class="tide-lo">↓ Low 0.2ft @ 4:18a</span>
         <span class="tide-hi">↑ High 4.0ft @ 10:28a</span>
         <span class="tide-lo">↓ Low 0.3ft @ 4:00p</span>
         <span class="tide-hi">↑ High 4.9ft @ 10:51p</span>
+      </div>
+    </div>
+
+    <div class="tide-day">
+      <div class="tide-day-lbl">Mon May 4</div>
+      <div class="sun-row">🌅 6:38a <span>sunrise</span> &nbsp; 🌇 8:06p <span>sunset</span></div>
+      <div class="tide-events">
+        <span class="tide-lo">↓ Low 0.4ft @ 4:56a</span>
+        <span class="tide-hi">↑ High 3.9ft @ 11:06a</span>
+        <span class="tide-lo">↓ Low 0.4ft @ 4:33p</span>
+        <span class="tide-hi">↑ High 4.7ft @ 11:28p</span>
       </div>
     </div>
   </div>
@@ -339,80 +335,56 @@
   <div class="card-title">🚨 Urgent — Do Today</div>
 
   <div class="urgent-block">
-    <div class="urgent-title">🎓 Kaia — Cap &amp; Gown Order Deadline TODAY</div>
-    <div class="urgent-sub">Fletcher HS seniors must order cap &amp; gown online by end of day May 1 via Herff Jones. Mandatory graduation info meeting also coming up. From: ledfordj@duvalschools.org</div>
+    <div class="urgent-title">💳 Chase Ink Business Premier — Due TOMORROW May 3</div>
+    <div class="urgent-sub">NOT on auto-pay — must pay manually today before EOD</div>
   </div>
 
   <div class="urgent-block">
-    <div class="urgent-title">💳 Chase Ink Business Premier — Due May 3 (2 days!)</div>
-    <div class="urgent-sub">NOT on auto-pay — manual payment required. Don't miss this one.</div>
+    <div class="urgent-title">🎓 Kaia's Cap &amp; Gown — DEADLINE WAS YESTERDAY</div>
+    <div class="urgent-sub">Herff Jones deadline was May 1. Order ASAP — call or check online if late orders accepted</div>
   </div>
 
   <div class="urgent-block">
-    <div class="urgent-title">✍️ Elliana — FSCJ Parent E-Signature Needed</div>
-    <div class="urgent-sub">Parent electronic signature required for dual enrollment application. Email from welcome@fscj.edu, Apr 22. Still outstanding.</div>
+    <div class="urgent-title">✍️ Elliana's FSCJ Parent E-Signature Still Needed</div>
+    <div class="urgent-sub">Email from welcome@fscj.edu on Apr 22 — electronic signature for dual enrollment application</div>
   </div>
 
   <div class="urgent-block">
-    <div class="urgent-title">🍽️ Kaia — School Lunch Account Final Notice ($8.75)</div>
-    <div class="urgent-sub">Fletcher HS account at $8.75 — FINAL NOTICE. Top up + set up auto-refill.</div>
+    <div class="urgent-title">🥗 Kaia's School Lunch — FINAL NOTICE ($8.75)</div>
+    <div class="urgent-sub">Fletcher HS lunch account at $8.75 — top up today + set up auto-refill</div>
   </div>
 </div>
 
 <!-- TODAY'S CALENDAR -->
 <div class="card">
-  <div class="card-title">📅 Today's Schedule — Friday May 1</div>
-
-  <div class="row">
-    <div class="dot dot-purple"></div>
-    <div class="row-content">
-      <div class="row-title">📝 EL TEST!! (All Day)</div>
-      <div class="row-sub">Elliana has a test today — check in with her this evening</div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="dot dot-yellow"></div>
-    <div class="row-content">
-      <div class="row-title">🎓 Kaia Cap &amp; Gown Order Deadline (Today!)</div>
-      <div class="row-sub">Herff Jones online order closes May 1 — take action before end of day</div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="dot dot-green"></div>
-    <div class="row-content">
-      <div class="row-title">🌊 Surf Window: Dawn–Morning (best before 11am)</div>
-      <div class="row-sub">N 9-10mph, 1-2ft, cross-shore · T-storms develop by early afternoon — get out early</div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="dot dot-blue"></div>
-    <div class="row-content">
-      <div class="row-title">✈️ J-3 Cub Window: Morning only</div>
-      <div class="row-sub">Currently CLR 12,500ft · 10mi vis · N6mph 🟢 — excellent right now. Fly before noon, storms arrive afternoon</div>
-    </div>
-  </div>
+  <div class="card-title">📅 Today's Schedule — Sat May 2</div>
+  <div class="empty">Nothing scheduled — free day. T-storms this afternoon, morning is clear. ✈️ Cub grounded today (IFR by noon).</div>
 </div>
 
 <!-- CUSTOMER ALERTS -->
 <div class="card">
   <div class="card-title">🏊 Customer &amp; Business Alerts</div>
   <div class="empty">No Skimmer alerts in the last 48 hours — all pools nominal ✅</div>
-  <div style="margin-top: 8px;">
+  <div style="margin-top:8px;">
     <div class="row">
       <div class="dot dot-yellow"></div>
       <div class="row-content">
         <div class="row-title">Coastal Club HOA — Quote Follow-Up Due</div>
-        <div class="row-sub">$4,500 quote sent Apr 20 · 11 days old · No response yet — consider following up today</div>
+        <div class="row-sub">$4,500 quote sent Apr 20 — 12 days with no reply. Time to follow up.</div>
       </div>
     </div>
     <div class="row">
       <div class="dot dot-blue"></div>
       <div class="row-content">
-        <div class="row-title">Ponte Vedra Beach Resort — Maytronics Lead</div>
-        <div class="row-sub">$8,500 inquiry Apr 23 · 8 days old · Nurture this one — big ticket</div>
+        <div class="row-title">Ponte Vedra Beach Resort — Lead Nurture</div>
+        <div class="row-sub">$8,500 Maytronics inquiry Apr 23 — needs follow-up touch</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="dot dot-yellow"></div>
+      <div class="row-content">
+        <div class="row-title">Trident Field Work — This Week</div>
+        <div class="row-sub">Rebalance tech schedule · Water samples · Chris G2C · Susan Hall G2C · Josh Popkin heater</div>
       </div>
     </div>
   </div>
@@ -421,36 +393,32 @@
 <!-- BILLS -->
 <div class="card">
   <div class="card-title">💳 Bills &amp; Money</div>
-
   <div class="row">
     <div class="dot dot-red"></div>
     <div class="row-content">
       <div class="row-title">Chase Ink Business Premier <span class="badge badge-red">DUE MAY 3</span></div>
-      <div class="row-sub">NOT on auto-pay — 2 days away. Pay now to avoid late fee.</div>
+      <div class="row-sub">NOT on auto-pay — manual action required TODAY</div>
     </div>
   </div>
-
   <div class="row">
     <div class="dot dot-yellow"></div>
     <div class="row-content">
-      <div class="row-title">GEICO + USAA — Potential Double Coverage</div>
-      <div class="row-sub">Both appear active — verify and cancel duplicate to save money</div>
+      <div class="row-title">GEICO + USAA</div>
+      <div class="row-sub">Both appear active — verify no double coverage, cancel duplicate</div>
     </div>
   </div>
-
   <div class="row">
     <div class="dot dot-green"></div>
     <div class="row-content">
       <div class="row-title">Skimmer · Comcast Business · Google Workspace</div>
-      <div class="row-sub">Auto-pay active — all OK ✅</div>
+      <div class="row-sub">All on auto-pay ✅</div>
     </div>
   </div>
-
   <div class="row">
     <div class="dot dot-blue"></div>
     <div class="row-content">
-      <div class="row-title">FAA Registry — Aircraft Registration Payment Received</div>
-      <div class="row-sub">$5.00 payment confirmed · Confirmation #281TFMK9 · J-3 Cub registration processing</div>
+      <div class="row-title">FAA — Aircraft Registration Payment Received</div>
+      <div class="row-sub">$5.00 payment confirmed (ref: 281TFMK9) — J-3 Cub registration in progress ✈️</div>
     </div>
   </div>
 </div>
@@ -466,11 +434,11 @@
 
   <div class="pipe-item">
     <span class="stage-badge s-quote">QUOTE</span>
-    <div><strong>Coastal Club HOA</strong><br><small style="color:var(--muted)">$4,500 · Sent Apr 20 · Follow up needed</small></div>
+    <div><strong>Coastal Club HOA</strong><br><small style="color:var(--muted)">$4,500 · Sent Apr 20 · 12 days no reply</small></div>
   </div>
   <div class="pipe-item">
     <span class="stage-badge s-lead">LEAD</span>
-    <div><strong>Ponte Vedra Beach Resort</strong><br><small style="color:var(--muted)">$8,500 Maytronics inquiry · Apr 23 · Nurture</small></div>
+    <div><strong>Ponte Vedra Beach Resort</strong><br><small style="color:var(--muted)">$8,500 Maytronics inquiry · Apr 23</small></div>
   </div>
 </div>
 
@@ -479,50 +447,45 @@
   <div class="card-title">👧 Kids Command Center</div>
 
   <div class="row">
-    <div class="dot dot-yellow"></div>
+    <div class="dot dot-red"></div>
     <div class="row-content">
-      <div class="row-title">Kaia — Cap &amp; Gown <span class="badge badge-red">TODAY</span></div>
-      <div class="row-sub">Order online via Herff Jones before end of day May 1. Mandatory graduation meeting details in the email from ledfordj@duvalschools.org</div>
+      <div class="row-title">Kaia — Cap &amp; Gown OVERDUE <span class="badge badge-red">ACT NOW</span></div>
+      <div class="row-sub">Herff Jones deadline was May 1 (yesterday). Call or check if late order accepted. ledfordj@duvalschools.org</div>
     </div>
   </div>
-
+  <div class="row">
+    <div class="dot dot-red"></div>
+    <div class="row-content">
+      <div class="row-title">Kaia — Lunch Account Final Notice ($8.75)</div>
+      <div class="row-sub">Fletcher HS — top up now + set auto-refill</div>
+    </div>
+  </div>
   <div class="row">
     <div class="dot dot-green"></div>
     <div class="row-content">
       <div class="row-title">Kaia — FSCJ TDE Application ✅ RESOLVED</div>
-      <div class="row-sub">Application submitted by Ms. Dunkley (school counselor). You approved the 2 available classes. Math class to be added in July if it opens. All good!</div>
+      <div class="row-sub">Submitted by Ms. Dunkley Apr 30. 2 classes approved. Math class pending (July). ✅</div>
     </div>
   </div>
-
   <div class="row">
-    <div class="dot dot-yellow"></div>
+    <div class="dot dot-blue"></div>
     <div class="row-content">
-      <div class="row-title">Kaia — Lunch Account <span class="badge badge-red">FINAL NOTICE</span></div>
-      <div class="row-sub">$8.75 balance · Top up + set auto-refill so this never happens again</div>
+      <div class="row-title">Kaia — Q4 Progress Reports Available</div>
+      <div class="row-sub">Published to FOCUS parent portal — check grades</div>
     </div>
   </div>
-
   <div class="row">
     <div class="dot dot-red"></div>
     <div class="row-content">
-      <div class="row-title">Elliana — FSCJ Parent E-Signature</div>
-      <div class="row-sub">Dual enrollment application needs parent e-sig · Email from welcome@fscj.edu Apr 22 · Still outstanding</div>
+      <div class="row-title">Elliana — FSCJ Parent E-Signature URGENT</div>
+      <div class="row-sub">Email from welcome@fscj.edu Apr 22 — electronic signature still pending</div>
     </div>
   </div>
-
   <div class="row">
-    <div class="dot dot-purple"></div>
+    <div class="dot dot-yellow"></div>
     <div class="row-content">
-      <div class="row-title">Elliana — Test Today 📝</div>
-      <div class="row-sub">"EL TEST!!" on calendar · Check in with her this evening</div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="dot dot-gray"></div>
-    <div class="row-content">
-      <div class="row-title">Elliana — SAT · BigFuture · Vanguard 529</div>
-      <div class="row-sub">Verify SAT spring date booked · Check BigFuture scholarship status · Review 529 quarterly balance</div>
+      <div class="row-title">Elliana — SAT Registration · BigFuture Scholarship · Vanguard 529</div>
+      <div class="row-sub">Verify spring SAT date booked · Check College Board scholarship status · Review 529 quarterly</div>
     </div>
   </div>
 </div>
@@ -530,44 +493,39 @@
 <!-- EMAIL HIGHLIGHTS -->
 <div class="card">
   <div class="card-title">📬 Email Highlights</div>
-
-  <div class="row">
-    <div class="dot dot-red"></div>
-    <div class="row-content">
-      <div class="row-title">🎓 Fletcher HS: Cap &amp; Gown ORDER DEADLINE TODAY</div>
-      <div class="row-sub">From ledfordj@duvalschools.org · Must order Herff Jones cap &amp; gown online by May 1. Also: mandatory senior meeting coming up.</div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="dot dot-green"></div>
-    <div class="row-content">
-      <div class="row-title">✅ Kaia FSCJ TDE Application — Submitted &amp; Confirmed</div>
-      <div class="row-sub">School counselors Greenert &amp; Dunkley confirmed submission. Paul approved 2 classes. Math class pending July opening.</div>
-    </div>
-  </div>
-
   <div class="row">
     <div class="dot dot-blue"></div>
     <div class="row-content">
-      <div class="row-title">✈️ FAA Aircraft Registration Payment — $5.00 Received</div>
-      <div class="row-sub">From caresfaa@faa.gov · Confirmation #281TFMK9 · J-3 Cub registration is processing</div>
+      <div class="row-title">✈️ FAA — Aircraft Registration Payment Confirmed</div>
+      <div class="row-sub">$5.00 received · Ref: 281TFMK9 · J-3 Cub registration in progress</div>
     </div>
   </div>
-
+  <div class="row">
+    <div class="dot dot-green"></div>
+    <div class="row-content">
+      <div class="row-title">Kaia FSCJ TDE — Application Submitted ✅</div>
+      <div class="row-sub">Ms. Dunkley confirmed Apr 30 · 2 classes approved · math class pending July opening</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="dot dot-red"></div>
+    <div class="row-content">
+      <div class="row-title">Fletcher HS — Senior Cap &amp; Gown Deadline PASSED</div>
+      <div class="row-sub">Herff Jones deadline was May 1 — check if Kaia ordered or if late order possible</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="dot dot-yellow"></div>
+    <div class="row-content">
+      <div class="row-title">Fletcher HS — Q4 Progress Reports Available</div>
+      <div class="row-sub">Check FOCUS portal for Kaia's grades · ledfordj@duvalschools.org Apr 29</div>
+    </div>
+  </div>
   <div class="row">
     <div class="dot dot-gray"></div>
     <div class="row-content">
-      <div class="row-title">Fletcher HS: 4th Quarter Progress Reports Available</div>
-      <div class="row-sub">From ledfordj@duvalschools.org · Check FOCUS portal for Kaia's progress report</div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="dot dot-gray"></div>
-    <div class="row-content">
-      <div class="row-title">Etsy Orders: 3 packages shipped (Apr 28)</div>
-      <div class="row-sub">Receipts #4040570244, #4046187047, #4046196221 · All in transit</div>
+      <div class="row-title">Duval Schools — Bus Stop-Arm Camera Fines Now Active</div>
+      <div class="row-sub">Civil penalties enforcement began May 1 — heads up if you drive near school zones</div>
     </div>
   </div>
 </div>
@@ -575,43 +533,39 @@
 <!-- CLAUDE CAN HANDLE -->
 <div class="card">
   <div class="card-title">🤖 Claude Can Handle This</div>
-
   <div class="row">
-    <div class="dot dot-green"></div>
-    <div class="row-content">
-      <div class="row-title">Set up Kaia's lunch account auto-refill</div>
-      <div class="row-sub">Tell me to "set up Kaia's lunch auto-refill" and I'll draft the steps or find the portal</div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="dot dot-green"></div>
+    <div class="dot dot-yellow"></div>
     <div class="row-content">
       <div class="row-title">Draft Coastal Club HOA follow-up email</div>
-      <div class="row-sub">Quote is 11 days old — I can write a warm follow-up to hello@tridentpoolcojax.com</div>
+      <div class="row-sub">$4,500 quote sent Apr 20 — 12 days of silence. Say the word and I'll draft a gentle nudge.</div>
     </div>
   </div>
-
   <div class="row">
-    <div class="dot dot-green"></div>
+    <div class="dot dot-yellow"></div>
     <div class="row-content">
-      <div class="row-title">Research GEICO vs USAA overlap</div>
-      <div class="row-sub">I can pull both policy emails and compare coverage to identify the duplicate</div>
+      <div class="row-title">Draft Ponte Vedra Beach Resort follow-up</div>
+      <div class="row-sub">$8,500 Maytronics lead from Apr 23 — worth a check-in this week.</div>
     </div>
   </div>
-
   <div class="row">
-    <div class="dot dot-green"></div>
+    <div class="dot dot-blue"></div>
     <div class="row-content">
-      <div class="row-title">Trident customer work scheduling</div>
-      <div class="row-sub">6 customers in the queue (G2C, heater, pump, salt cells) — I can draft a schedule for the week</div>
+      <div class="row-title">Research Herff Jones late order options for Kaia</div>
+      <div class="row-sub">Missed the May 1 deadline — I can look up if late orders are accepted and what the process is.</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="dot dot-blue"></div>
+    <div class="row-content">
+      <div class="row-title">Plan Sunday Cub flight (May 3 is a beautiful VFR day)</div>
+      <div class="row-sub">Sunny, N winds 8 mph, clear skies all day at KCRG. First flight of the season? Say the word.</div>
     </div>
   </div>
 </div>
 
 <div class="footer">
   Paul's Daily Brief · Trident Pool Co · pechase@gmail.com<br>
-  Auto-generated by Claude at 6:00 AM ET · May 1, 2026
+  Auto-generated by Claude · 6:00 AM ET · May 2, 2026
 </div>
 
 </body>
