@@ -4,32 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Paul's Brief · 2026-05-09</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #0f1117;
-    --card: #1a1d27;
-    --border: #2a2d3a;
-    --text: #e8eaf0;
-    --muted: #9ba3bf;
-    --accent: #5b73e8;
-    --green: #3ecf8e;
-    --red: #e85b5b;
-    --yellow: #f59e0b;
-    --purple: #8b5cf6;
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    padding: 12px;
-    font-size: 15px;
-    line-height: 1.5;
-    max-width: 600px;
-    margin: 0 auto;
-  }
+  :root { --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a; --text: #e8eaf0; --muted: #9ba3bf; --accent: #5b73e8; --green: #3ecf8e; --red: #e85b5b; --yellow: #f59e0b; --purple: #8b5cf6; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); padding: 12px; font-size: 15px; line-height: 1.5; max-width: 600px; margin: 0 auto; }
   .date-bar { text-align: center; font-size: 12px; color: var(--muted); padding: 6px 0 14px; letter-spacing: .05em; text-transform: uppercase; }
   .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; margin-bottom: 12px; }
   .card-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 10px; }
@@ -40,138 +19,168 @@
   .row:last-child { border-bottom: none; }
   .dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
   .dot-red { background: var(--red); } .dot-green { background: var(--green); } .dot-yellow { background: var(--yellow); } .dot-blue { background: var(--accent); } .dot-gray { background: #6b7280; } .dot-purple { background: var(--purple); }
-  .row-content { flex: 1; }
-  .row-title { font-weight: 600; font-size: 14px; }
-  .row-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
-  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; }
-  .badge-red { background: #7f1d1d; color: #fca5a5; } .badge-yellow { background: #451a03; color: #fcd34d; } .badge-green { background: #052e16; color: #4ade80; } .badge-blue { background: #1e3a5f; color: #93c5fd; }
-  .tl-day { margin-bottom: 8px; }
+  .row-content { flex: 1; } .row-title { font-weight: 600; font-size: 14px; } .row-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .tl-day { margin-bottom: 10px; }
   .tl-label { font-size: 12px; color: var(--muted); margin-bottom: 4px; font-weight: 600; }
   .tl-slots { display: flex; gap: 3px; }
-  .tl-slot { flex: 1; height: 40px; border-radius: 5px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; color: #fff; text-align: center; line-height: 1.2; }
+  .tl-slot { flex: 1; height: 46px; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; color: #fff; text-align: center; line-height: 1.3; position: relative; }
   .slot-good { background: #16a34a; } .slot-marginal { background: #d97706; } .slot-poor { background: #dc2626; } .slot-past { background: #374151; color: #4b5563; } .slot-night { background: #1f2937; color: #374151; }
-  .slot-best { position: relative; }
-  .slot-best::after { content: '★'; position: absolute; top: -11px; font-size: 9px; color: #fbbf24; }
-  .legend { font-size: 10px; color: var(--muted); margin-top: 5px; }
-  .tide-section { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); }
-  .tide-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
-  .tide-day { margin-bottom: 10px; }
-  .tide-day-lbl { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
-  .sun-row { display: flex; gap: 16px; font-size: 13px; margin-bottom: 4px; }
-  .sun-row span { color: var(--muted); font-size: 11px; margin-left: 4px; }
-  .tide-events { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12px; color: var(--muted); }
-  .tide-hi { color: var(--accent); font-weight: 600; } .tide-lo { color: var(--muted); }
-  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
-  .stat-cell { background: var(--bg); border-radius: 8px; padding: 10px; text-align: center; }
-  .stat-val { font-size: 18px; font-weight: 700; }
-  .stat-lbl { font-size: 10px; color: var(--muted); margin-top: 2px; }
-  .pos { color: var(--green); } .neg { color: var(--red); } .warn { color: var(--yellow); }
-  .pipe-item { background: var(--bg); border-radius: 8px; padding: 10px 12px; margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
-  .pipe-item:last-child { margin-bottom: 0; }
-  .stage-badge { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 5px; flex-shrink: 0; }
-  .s-quote { background: #3b2d0f; color: #fbbf24; } .s-lead { background: #1e3a5f; color: #60a5fa; } .s-follow { background: #1a2e1a; color: #4ade80; }
+  .slot-best::after { content: "★"; position: absolute; top: -12px; font-size: 10px; color: #fbbf24; }
+  .legend { font-size: 10px; color: var(--muted); margin-top: 6px; }
+  .surf-summary { background: var(--bg); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; }
+  .surf-rating { font-size: 20px; font-weight: 800; color: var(--yellow); }
+  .tide-section { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+  .tide-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 10px; }
+  .tide-day { margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .tide-day:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .tide-day-lbl { font-size: 13px; font-weight: 700; margin-bottom: 5px; }
+  .sun-row { display: flex; gap: 16px; font-size: 12px; margin-bottom: 6px; color: var(--muted); }
+  .sun-row strong { color: var(--text); }
+  .tide-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; }
+  .tide-cell { background: var(--bg); border-radius: 6px; padding: 6px 8px; font-size: 12px; }
+  .t-type { font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 1px; }
+  .tide-hi .t-type { color: var(--accent); } .tide-lo .t-type { color: var(--muted); }
+  .t-time { font-weight: 600; } .t-height { font-size: 11px; color: var(--muted); }
   .urgent-block { background: #450a0a; border: 1px solid #7f1d1d; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; }
-  .urgent-block.yellow-urgent { background: #1c1200; border: 1px solid #78350f; }
+  .urgent-block.yellow { background: #1c1200; border: 1px solid #78350f; }
   .urgent-block:last-child { margin-bottom: 0; }
   .urgent-title { font-weight: 700; font-size: 13px; color: #fca5a5; }
-  .urgent-block.yellow-urgent .urgent-title { color: #fcd34d; }
+  .urgent-block.yellow .urgent-title { color: #fcd34d; }
   .urgent-sub { font-size: 12px; color: #f87171; margin-top: 3px; }
-  .urgent-block.yellow-urgent .urgent-sub { color: #fbbf24; }
+  .urgent-block.yellow .urgent-sub { color: #fbbf24; }
+  .concert-banner { background: linear-gradient(135deg, #1e0f3a, #2d1060); border: 1px solid #5b21b6; border-radius: 10px; padding: 10px 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+  .concert-title { font-weight: 700; font-size: 14px; color: #c4b5fd; } .concert-sub { font-size: 12px; color: #a78bfa; margin-top: 2px; }
+  .vfr-badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 800; margin-left: 6px; }
+  .vfr-marginal { background: #451a03; color: #fcd34d; } .vfr-poor { background: #7f1d1d; color: #fca5a5; }
   .footer { text-align: center; font-size: 11px; color: #4b5563; padding: 16px 0 8px; }
   .empty { color: var(--muted); font-size: 13px; font-style: italic; padding: 4px 0; }
-  .concert-banner { background: linear-gradient(135deg, #1e0f3a, #2d1060); border: 1px solid #5b21b6; border-radius: 10px; padding: 10px 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
-  .concert-title { font-weight: 700; font-size: 14px; color: #c4b5fd; }
-  .concert-sub { font-size: 12px; color: #a78bfa; margin-top: 2px; }
 </style>
 </head>
 <body>
 <div class="date-bar">Saturday · May 9, 2026 · Generated 6:00 AM ET</div>
 <div class="quote-card">
-  <div class="quote-text">"The ocean will always be there. The question is whether you'll show up for it — and for everything else that matters."</div>
-  <div class="quote-author">— On building a life worth living</div>
+  <div class="quote-text">"You don't stop surfing when you get old — you get old when you stop surfing."</div>
+  <div class="quote-author">— Frank Pavich</div>
 </div>
+
 <div class="card">
-  <div class="card-title">🌊 Surf — 72hr · Jax Beach</div>
-  <div class="tl-day"><div class="tl-label">Today — Sat May 9</div><div class="tl-slots"><div class="tl-slot slot-past">Dawn<br>Past</div><div class="tl-slot slot-marginal">Morn<br>1-2ft</div><div class="tl-slot slot-poor">Aftn<br>1ft Onsh</div><div class="tl-slot slot-night">Eve</div></div></div>
-  <div class="tl-day"><div class="tl-label">Tomorrow — Sun May 10</div><div class="tl-slots"><div class="tl-slot slot-marginal slot-best">Dawn<br>2ft</div><div class="tl-slot slot-marginal">Morn<br>2ft</div><div class="tl-slot slot-poor">Aftn<br>1ft</div><div class="tl-slot slot-night">Eve</div></div></div>
-  <div class="tl-day"><div class="tl-label">Mon May 11</div><div class="tl-slots"><div class="tl-slot slot-marginal">Dawn<br>2ft</div><div class="tl-slot slot-poor">Morn<br>1ft</div><div class="tl-slot slot-poor">Aftn<br>1ft</div><div class="tl-slot slot-night">Eve</div></div></div>
-  <div class="legend">🟢 Good · 🟡 Marginal · 🔴 Poor · ★ Best window · SSE winds 8kt onshore today</div>
+  <div class="card-title">🌊 Surf — 48hr · Jax Beach · via 911surfreport.com</div>
+  <div class="surf-summary">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <div><div style="font-weight:700;font-size:14px;">Knee–Thigh High · Semi-clean</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Buoy: 2.0ft ENE @ 6.2s · 4kt E wind · Water 74°F · Air 75°F</div></div>
+      <div style="text-align:right"><div class="surf-rating">★★★</div><div style="font-size:10px;color:var(--muted)">of 10</div></div>
+    </div>
+    <div style="font-size:12px;color:var(--yellow);margin-top:6px;">🏄 Longboard day — looks better/bigger than AM. Check sunrise Sunday for update.</div>
+  </div>
+  <div class="tl-day">
+    <div class="tl-label">Today — Sat May 9</div>
+    <div class="tl-slots">
+      <div class="tl-slot slot-past">Dawn Past</div>
+      <div class="tl-slot slot-marginal">Morn 1-2ft E winds</div>
+      <div class="tl-slot slot-marginal slot-best">Aftn 2ft S winds</div>
+      <div class="tl-slot slot-night">Eve</div>
+    </div>
+  </div>
+  <div class="tl-day">
+    <div class="tl-label">Tomorrow — Sun May 10</div>
+    <div class="tl-slots">
+      <div class="tl-slot slot-marginal">Dawn 1-2ft</div>
+      <div class="tl-slot slot-marginal">Morn 1-2ft</div>
+      <div class="tl-slot slot-poor">Aftn Small</div>
+      <div class="tl-slot slot-night">Eve</div>
+    </div>
+  </div>
+  <div class="legend">🟢 Good (3ft+ offshore) · 🟡 Marginal · 🔴 Poor · ★ Best window</div>
 </div>
+
 <div class="card">
-  <div class="card-title">✈️ J-3 Cub — 72hr · KCRG</div>
-  <div class="tl-day"><div class="tl-label">Today — Sat May 9 ✨ GREAT DAY TO FLY</div><div class="tl-slots"><div class="tl-slot slot-past">Dawn<br>Past</div><div class="tl-slot slot-good slot-best">Morn<br>VFR CLR</div><div class="tl-slot slot-good">Aftn<br>VFR CLR</div><div class="tl-slot slot-good">Eve<br>VFR✨ CLR</div></div></div>
-  <div class="tl-day"><div class="tl-label">Tomorrow — Sun May 10</div><div class="tl-slots"><div class="tl-slot slot-good">Dawn<br>VFR✨</div><div class="tl-slot slot-good">Morn<br>VFR</div><div class="tl-slot slot-marginal">Aftn<br>Est.</div><div class="tl-slot slot-night">Eve</div></div></div>
-  <div class="tl-day"><div class="tl-label">Mon May 11</div><div class="tl-slots"><div class="tl-slot slot-marginal">Dawn<br>Est.</div><div class="tl-slot slot-marginal">Morn<br>Est.</div><div class="tl-slot slot-marginal">Aftn<br>Est.</div><div class="tl-slot slot-night">Eve</div></div></div>
-  <div class="legend">KCRG 9:53AM: CLR · 10SM+ · 170°@8kt · 64°F · VFR CONFIRMED 🟢 · Season ACTIVE</div>
+  <div class="card-title">✈️ J-3 Cub — 48hr · KSGJ · North Florida Regional</div>
+  <div class="tl-day">
+    <div class="tl-label">Today — Sat May 9 <span class="vfr-badge vfr-marginal">MARGINAL VFR</span></div>
+    <div class="tl-slots">
+      <div class="tl-slot slot-past">Dawn Past</div>
+      <div class="tl-slot slot-marginal slot-best">Morn 5SM SCT015</div>
+      <div class="tl-slot slot-marginal">Aftn 5SM SCT015</div>
+      <div class="tl-slot slot-poor">Eve Showers CB⚡</div>
+    </div>
+  </div>
+  <div class="tl-day">
+    <div class="tl-label">Tomorrow — Sun May 10 <span class="vfr-badge vfr-poor">IFR EARLY → IMPROVING</span></div>
+    <div class="tl-slots">
+      <div class="tl-slot slot-poor">Dawn OVC015 IFR</div>
+      <div class="tl-slot slot-marginal">Morn Improving</div>
+      <div class="tl-slot slot-marginal">Aftn Clearing</div>
+      <div class="tl-slot slot-night">Eve</div>
+    </div>
+  </div>
+  <div class="legend">KSGJ 3:56PM: 040@6kt · 5SM mist · SCT015 · 77°F · Marginal VFR · Showers+CB after 8PM tonight · OVC015 overnight → clearing Sun late AM · Season ACTIVE</div>
+
   <div class="tide-section">
-    <div class="tide-title">🌊 Tides &amp; ☀️ Golden Hour</div>
-    <div class="tide-day"><div class="tide-day-lbl">Sat May 9</div><div class="sun-row">🌅 6:41a <span>sunrise</span> &nbsp; 🌇 8:00p <span>sunset</span></div><div class="tide-events"><span class="tide-hi">↑ High ~5.3ft · AM</span><span class="tide-lo">↓ Low ~0.6ft · Midday</span><span class="tide-hi">↑ High ~4.8ft · Eve</span><span style="color:#4b5563;font-size:10px">*Live data unavailable — check tides.net</span></div></div>
-    <div class="tide-day"><div class="tide-day-lbl">Sun May 10</div><div class="sun-row">🌅 6:40a <span>sunrise</span> &nbsp; 🌇 8:01p <span>sunset</span></div><div class="tide-events"><span class="tide-hi">↑ High ~5.1ft · AM</span><span class="tide-lo">↓ Low ~0.7ft · Afternoon</span><span class="tide-hi">↑ High ~4.9ft · Eve</span></div></div>
-    <div class="tide-day"><div class="tide-day-lbl">Mon May 11</div><div class="sun-row">🌅 6:40a <span>sunrise</span> &nbsp; 🌇 8:02p <span>sunset</span></div><div class="tide-events"><span class="tide-hi">↑ High ~5.0ft · AM</span><span class="tide-lo">↓ Low ~0.8ft · Afternoon</span><span class="tide-hi">↑ High ~4.7ft · Eve</span></div></div>
+    <div class="tide-title">🌊 Tides · Jax Beach &nbsp;|&nbsp; ☀️ Sunrise / Sunset</div>
+    <div class="tide-day">
+      <div class="tide-day-lbl">Sat May 9</div>
+      <div class="sun-row">🌅 <strong>6:37 AM</strong> sunrise &nbsp;&nbsp; 🌇 <strong>8:07 PM</strong> sunset</div>
+      <div class="tide-grid">
+        <div class="tide-cell tide-hi"><div class="t-type">↑ High</div><div class="t-time">2:04 AM</div><div class="t-height">4.63 ft</div></div>
+        <div class="tide-cell tide-lo"><div class="t-type">↓ Low</div><div class="t-time">8:36 AM</div><div class="t-height">0.55 ft</div></div>
+        <div class="tide-cell tide-hi"><div class="t-type">↑ High</div><div class="t-time">2:37 PM</div><div class="t-height">3.98 ft</div></div>
+        <div class="tide-cell tide-lo"><div class="t-type">↓ Low</div><div class="t-time">8:43 PM</div><div class="t-height">0.69 ft</div></div>
+      </div>
+    </div>
+    <div class="tide-day">
+      <div class="tide-day-lbl">Sun May 10</div>
+      <div class="sun-row">🌅 <strong>6:37 AM</strong> sunrise &nbsp;&nbsp; 🌇 <strong>8:08 PM</strong> sunset</div>
+      <div class="tide-grid">
+        <div class="tide-cell tide-hi"><div class="t-type">↑ High</div><div class="t-time">2:59 AM</div><div class="t-height">4.56 ft</div></div>
+        <div class="tide-cell tide-lo"><div class="t-type">↓ Low</div><div class="t-time">9:25 AM</div><div class="t-height">0.40 ft</div></div>
+        <div class="tide-cell tide-hi"><div class="t-type">↑ High</div><div class="t-time">3:34 PM</div><div class="t-height">4.25 ft</div></div>
+        <div class="tide-cell tide-lo"><div class="t-type">↓ Low</div><div class="t-time">9:43 PM</div><div class="t-height">0.57 ft</div></div>
+      </div>
+    </div>
   </div>
 </div>
+
 <div class="card">
   <div class="card-title">🚨 Urgent — Do Today</div>
-  <div class="urgent-block"><div class="urgent-title">📋 MANDATORY Dual Enrollment Orientation — May 16</div><div class="urgent-sub">From Duval Schools: All first-time off-campus dual enrollment students must attend with parent/guardian — Saturday May 16 at 11:00 AM. YOU must be there. Add to calendar NOW.</div></div>
-  <div class="urgent-block"><div class="urgent-title">🍽️ Kaia Lunch Account — FINAL NOTICE ($8.75)</div><div class="urgent-sub">Fletcher HS account critically low. Top up + set up auto-refill before Monday.</div></div>
-  <div class="urgent-block yellow-urgent"><div class="urgent-title">💊 Pick Up Meds — Kaia, Elliana &amp; Your Refill</div><div class="urgent-sub">Still pending from earlier this week.</div></div>
-  <div class="urgent-block yellow-urgent"><div class="urgent-title">🏊 Rebalance Tech Schedule + Water Samples</div><div class="urgent-sub">High priority Trident ops — coordinate Harry, Mike, Dournell.</div></div>
-  <div class="urgent-block yellow-urgent"><div class="urgent-title">🔵 Canvas Data Breach — Duval Schools</div><div class="urgent-sub">Received May 8: Nationwide Canvas breach affecting Duval County — may affect Kaia &amp; Elliana's accounts. Check email.</div></div>
+  <div class="urgent-block"><div class="urgent-title">📋 MANDATORY Dual Enrollment Orientation — May 16</div><div class="urgent-sub">Parent must attend with student · Saturday May 16 at 11:00 AM · Add to calendar NOW</div></div>
+  <div class="urgent-block"><div class="urgent-title">🍽️ Kaia Lunch Account — FINAL NOTICE ($8.75)</div><div class="urgent-sub">Fletcher HS · Top up + set auto-refill before Monday</div></div>
+  <div class="urgent-block yellow"><div class="urgent-title">💊 Pick Up Meds — Kaia, Elliana &amp; Your Refill</div><div class="urgent-sub">Still pending</div></div>
+  <div class="urgent-block yellow"><div class="urgent-title">🏊 Rebalance Tech Schedule + Water Samples</div><div class="urgent-sub">High priority — coordinate Harry, Mike, Dournell</div></div>
+  <div class="urgent-block yellow"><div class="urgent-title">🔵 Canvas Data Breach — Duval Schools</div><div class="urgent-sub">May affect Kaia &amp; Elliana's accounts — check email for details</div></div>
 </div>
+
 <div class="card">
   <div class="card-title">📅 Today's Schedule</div>
-  <div class="concert-banner"><div>🎸</div><div><div class="concert-title">NFG. The Five</div><div class="concert-sub">Doors 7:00 PM · Show 8:00 PM tonight</div></div></div>
-  <div class="row"><div class="dot dot-gray"></div><div class="row-content"><div class="row-title">Morning — Wide open 🌊✈️</div><div class="row-sub">No conflicts until 7pm. Perfect for beach or a Cub flight — VFR is stellar today.</div></div></div>
-  <div class="row"><div class="dot dot-purple"></div><div class="row-content"><div class="row-title">7:00 PM — Doors open, NFG. The Five</div><div class="row-sub">Concert tonight — plan to leave by 6:30 PM</div></div></div>
+  <div class="concert-banner"><div>🎸</div><div><div class="concert-title">NFG. The Five</div><div class="concert-sub">Doors 7:00 PM · Show 8:00 PM · Leave by 6:30</div></div></div>
+  <div class="row"><div class="dot dot-yellow"></div><div class="row-content"><div class="row-title">⚠️ Fly This Morning if Going — Conditions Drop Tonight</div><div class="row-sub">KSGJ: Showers + CB expected after 8PM · Morning/afternoon are your window</div></div></div>
+  <div class="row"><div class="dot dot-gray"></div><div class="row-content"><div class="row-title">Morning Wide Open — Beach or Cockpit</div><div class="row-sub">No conflicts until 7PM · 75°F · 2ft surf · Longboard conditions</div></div></div>
 </div>
+
 <div class="card">
   <div class="card-title">🏊 Customer &amp; Business Alerts</div>
   <div class="empty">No Skimmer alerts — all pools nominal</div>
   <div style="margin-top:10px;border-top:1px solid var(--border);padding-top:10px;">
     <div class="row"><div class="dot dot-yellow"></div><div class="row-content"><div class="row-title">Open Work Orders</div><div class="row-sub">Chris G2C · Susan Hall G2C · Josh Popkin heater · Brandy Lutz pump · Rob McGuiness salt cell · Reid Wingate quote · Andrew salt cell</div></div></div>
-    <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Pipeline — Referrals Pending Follow-Up</div><div class="row-sub">Lore · Reid · Bradley — follow up this week</div></div></div>
+    <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Referrals — Follow Up This Week</div><div class="row-sub">Lore · Reid · Bradley</div></div></div>
   </div>
 </div>
+
 <div class="card">
   <div class="card-title">💳 Bills &amp; Money</div>
-  <div class="row"><div class="dot dot-yellow"></div><div class="row-content"><div class="row-title">GEICO Auto Pay — Processing Tomorrow May 10</div><div class="row-sub">Policy 6251299647 · Auto confirmed — no action needed</div></div></div>
-  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Apple / ChatGPT Plus — Charged May 8</div><div class="row-sub">Order MN413HB782 · pechase@gmail.com</div></div></div>
-  <div class="row"><div class="dot dot-green"></div><div class="row-content"><div class="row-title">Chase Ink Business Premier — ✅ Paid</div><div class="row-sub">Paid May 2026 · All clear</div></div></div>
-  <div class="row"><div class="dot dot-yellow"></div><div class="row-content"><div class="row-title">GEICO + USAA — Verify no double coverage</div><div class="row-sub">Still on the list — potential savings</div></div></div>
+  <div class="row"><div class="dot dot-yellow"></div><div class="row-content"><div class="row-title">GEICO Auto Pay — Processing Tomorrow May 10</div><div class="row-sub">Policy 6251299647 · Confirmed · No action needed</div></div></div>
+  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Apple / ChatGPT Plus — Charged May 8</div><div class="row-sub">Order MN413HB782</div></div></div>
+  <div class="row"><div class="dot dot-green"></div><div class="row-content"><div class="row-title">Chase Ink Business Premier — ✅ Paid</div><div class="row-sub">May 2026 · All clear</div></div></div>
+  <div class="row"><div class="dot dot-yellow"></div><div class="row-content"><div class="row-title">GEICO + USAA — Verify no double coverage</div><div class="row-sub">Potential savings · Still on the list</div></div></div>
   <div class="row"><div class="dot dot-green"></div><div class="row-content"><div class="row-title">Skimmer · Comcast Business · Google Workspace</div><div class="row-sub">Auto-pay · All good</div></div></div>
 </div>
-<div class="card">
-  <div class="card-title">📊 Trident Snapshot — YTD Jan–Apr 2026</div>
-  <div class="stat-row">
-    <div class="stat-cell"><div class="stat-val pos">$80,372</div><div class="stat-lbl">Revenue</div></div>
-    <div class="stat-cell"><div class="stat-val warn">$48,790</div><div class="stat-lbl">Expenses</div></div>
-    <div class="stat-cell"><div class="stat-val pos">$27,781</div><div class="stat-lbl">Net · 34.6%</div></div>
-  </div>
-  <div class="pipe-item"><span class="stage-badge s-lead">PIPELINE</span><div><strong>No active leads</strong><br><small style="color:var(--muted)">Coastal Club HOA removed · Referrals: Lore / Reid / Bradley pending</small></div></div>
-</div>
-<div class="card">
-  <div class="card-title">👧 Kids Command Center</div>
-  <div class="row"><div class="dot dot-red"></div><div class="row-content"><div class="row-title">⚠️ MANDATORY Orientation — May 16, 11am (with you!)</div><div class="row-sub">First-time off-campus dual enrollment — parent required. Block Saturday morning NOW.</div></div></div>
-  <div class="row"><div class="dot dot-red"></div><div class="row-content"><div class="row-title">Kaia — Lunch Account $8.75 FINAL NOTICE</div><div class="row-sub">Fletcher HS · Top up ASAP + set auto-refill · Ms. Archon dual enrollment reply still pending</div></div></div>
-  <div class="row"><div class="dot dot-yellow"></div><div class="row-content"><div class="row-title">Kaia — FSCJ TDE In Progress</div><div class="row-sub">2 classes approved · Math pending July</div></div></div>
-  <div class="row"><div class="dot dot-green"></div><div class="row-content"><div class="row-title">Elliana — FSCJ &amp; SAT All Done ✅</div><div class="row-sub">Oregon trip planning needed · Vanguard 529 review quarterly</div></div></div>
-  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">FSCJ South Campus Discovery Day</div><div class="row-sub">Invite received May 6 — worth checking for Kaia or Elliana</div></div></div>
-</div>
-<div class="card">
-  <div class="card-title">📬 Email Highlights</div>
-  <div class="row"><div class="dot dot-red"></div><div class="row-content"><div class="row-title">Mandatory Dual Enrollment Orientation — May 16</div><div class="row-sub">Duval Schools · Parent must attend at 11am · Don't miss this</div></div></div>
-  <div class="row"><div class="dot dot-yellow"></div><div class="row-content"><div class="row-title">Canvas Data Breach — Duval County Schools</div><div class="row-sub">May 8 · Nationwide breach affecting Canvas · Check email for details</div></div></div>
-  <div class="row"><div class="dot dot-yellow"></div><div class="row-content"><div class="row-title">GEICO Auto Pay Processing May 10</div><div class="row-sub">Policy 6251299647 · Processes tomorrow</div></div></div>
-  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Apple Receipt — ChatGPT Plus · May 8</div><div class="row-sub">Order MN413HB782</div></div></div>
-  <div class="row"><div class="dot dot-gray"></div><div class="row-content"><div class="row-title">FSCJ Discovery Day Invitation</div><div class="row-sub">May 6 · South Campus event</div></div></div>
-</div>
+
 <div class="card">
   <div class="card-title">🤖 Claude Can Handle This</div>
-  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Add May 16 Orientation to Calendar</div><div class="row-sub">Say "add mandatory orientation May 16 at 11am" and I'll block it</div></div></div>
-  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Draft referral follow-ups — Lore / Reid / Bradley</div><div class="row-sub">Say "draft referral follow-ups" and I'll write them</div></div></div>
-  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Schedule Dournell's week around his dr appointment</div><div class="row-sub">Tell me his appt time and I'll help plan the crew</div></div></div>
-  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Check GEICO vs USAA insurance overlap</div><div class="row-sub">Say "check my insurance overlap" and I'll scan your emails</div></div></div>
+  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Add May 16 Orientation to Calendar</div><div class="row-sub">Say "add mandatory orientation May 16 at 11am"</div></div></div>
+  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Draft Lore / Reid / Bradley referral follow-ups</div><div class="row-sub">Say "draft referral follow-ups"</div></div></div>
+  <div class="row"><div class="dot dot-blue"></div><div class="row-content"><div class="row-title">Check GEICO vs USAA insurance overlap</div><div class="row-sub">Say "check my insurance overlap"</div></div></div>
 </div>
-<div class="footer">Paul's Daily Brief · Trident Pool Co · pechase@gmail.com<br>Auto-generated by Claude · Saturday May 9, 2026 · 6:00 AM ET</div>
+
+<div class="footer">Paul's Daily Brief · pechase@gmail.com · Auto-generated by Claude<br>Saturday May 9, 2026 · Surf: 911surfreport.com · Weather: KSGJ</div>
 </body>
 </html>
