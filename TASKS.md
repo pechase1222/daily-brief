@@ -6,11 +6,13 @@
 
 ## 🔴 URGENT — Do This Week
 
-- [ ] 🔴 Cancel Harry, Mike & Dournell schedules this week (Mike: Friday off / Dournell: dr appt TBD)
+- [ ] 🔴 RENEW handsomedadsurfclub.com domain — expires MAY 17 (4 days!) via Squarespace
+- [ ] 🔴 Kaia — Mandatory DE Orientation SAT MAY 16 @ 11am — YOU must attend with her (wittmerj@duvalschools.org)
+- [ ] 🔴 Top up Kaia's school lunch account (Fletcher HS — Final Notice, $8.75 balance)
 - [ ] 🔴 Pick up Kaia & Elliana meds
 - [ ] 🔴 My med refill
+- [ ] 🔴 Cancel Harry, Mike & Dournell schedules this week (Mike: Friday off / Dournell: dr appt TBD)
 - [ ] 🔴 Monday — Legends FCB aircraft audit
-- [ ] 🔴 Top up Kaia's school lunch account (Fletcher HS — Final Notice, $8.75 balance)
 
 ---
 
@@ -77,5 +79,5 @@
 
 ---
 
-*Last updated: May 3, 2026 — Major dump: Chase paid, FSCJ done, Elliana SAT done, Kaia junior (no cap/gown), Coastal Club removed from pipeline, Legends tasks added, referrals added, vehicle maintenance, meds, Oregon trip*
+*Last updated: May 13, 2026 — Added domain expiry (May 17) + Kaia mandatory DE orientation (May 16) from morning brief scan*
 *Tell Claude to "update my task list" anytime to add, complete, or reprioritize items.*
